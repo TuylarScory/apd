@@ -1,0 +1,76 @@
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+.header img {
+    margin-left: 10px;
+}
+.header h1 {
+    padding: 12px 0;
+}
+.header a {
+    text-decoration: none;
+    color: black;
+}
+.logo {
+    width: 6%;
+}
+nav {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+    overflow: auto;
+    z-index: 99;
+}
+.nav-middle img {
+    display: none;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #FF7F50;
+}
+.link{
+    color: white;
+}
+nav::after {
+    background: red;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+}
+li a {
+    text-decoration: none;
+    color: black;
+}
+nav .nav-left {
+    width: 50%;
+}
+nav .nav-left ul li{
+    padding-right: 50px;
+}
+.nav-right {
+    width: 50%;
+}
+nav .nav-right ul {
+    justify-content: end;
+}
+nav .nav-right ul li {
+    padding-right: 50px;
+}
+#donate {
+    border: 1px solid rgb(197, 191, 191);
+    padding: 7px 25px
+
+}
+#donate:hover {
+    color: white;
+    background-color: black;
+}
+#logout {
+    cursor: pointer;
+}

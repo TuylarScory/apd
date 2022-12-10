@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dish</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="dish-container">
+    <div class="dish-title">
+      <h1>Add New Meals</h1>
+    </div>
+    <form action="">
+      <div class="dish-form">
+        <div class="dish-left">
+          <h3 id="dish_img_text_alert">Please only upload image under 1MB!</h3>
+          <input type="file" id="dish_img_file" name="" value="" style="display: none;">
+          <label for="dish_img_file" class="dish-img-label">+ <br></label>
+          <img id="dish_img_output">
+
+
+        </div>
+        <div class="dish-right">
+          <div class="dish_input_field">
+            <div class="input_left">
+              <label for="dish-name">Meal Name</label>
+            </div>
+            <div class="input_right">
+              <input type="text" id="dish-name" name="dishName" maxLength="64" value=""
+                onChange={this.handleInputChange} required></input>
+            </div>
+
+
+          </div>
+          <div class="dish_input_field">
+            <div class="input_left">
+              <label for="dish-calorie">Calorie</label>
+            </div>
+            <div class="input_right">
+              <input type="text" id="dish-calorie" name="calorie" maxLength="64" value=""
+                onChange={this.handleInputChange} required></input>
+            </div>
+          </div>
+          <div class="dish_input_field">
+            <div class="input_left">
+              <label for="dish-fat">Fat</label>
+            </div>
+            <div class="input_right">
+              <input type="text" id="dish-fat" name="fat" maxLength="64" value="" onChange={this.handleInputChange}
+                required></input>
+            </div>
+          </div>
+          <div class="dish_input_field">
+            <div class="input_left">
+              <label for="dish-sugar">Sugar</label>
+            </div>
+            <div class="input_right">
+              <input type="text" id="dish-sugar" name="sugar" maxLength="64" value="" onChange={this.handleInputChange}
+                required></input>
+            </div>
+          </div>
+          <div class="dish_input_field">
+            <div class="input_left">
+              <label for="dish-carbs">Carbohydrate</label>
+            </div>
+            <div class="input_right">
+              <input type="text" id="dish-carbs" name="carbs" maxLength="64" value="" onChange={this.handleInputChange}
+                required></input>
+            </div>
+          </div>
+          <div class="dish_input_field">
+            <div class="input_left">
+              <label for="dish-fibre">Fiber</label>
+            </div>
+            <div class="input_right">
+              <input type="text" id="dish-fibre" name="fibre" maxLength="64" value="" onChange={this.handleInputChange}
+                required></input>
+            </div>
+          </div>
+          <div class="dish_input_field">
+            <div class="input_left">
+              <label for="dish-protein">Protein</label>
+            </div>
+            <div class="input_right">
+              <input type="text" id="dish-protein" name="protein" maxLength="64" value=""
+                onChange={this.handleInputChange} required></input>
+            </div>
+          </div>
+          <div class="dish_input_field">
+            <div class="input_left">
+              <label for="dish-suggestion">Suggestion</label>
+            </div>
+            <div class="input_right">
+              <input type="text" id="dish-suggestion" name="suggestion" maxLength="64" value=""
+                onChange={this.handleInputChange} required></input>
+            </div>
+          </div>
+          <div class="dish_input_field">
+            <div class="input_left">
+              <label for="dish-desc">Description</label>
+            </div>
+            <div class="input_right">
+              <textarea id="dish-desc" name="dishDescription" id="" rows="4" required></textarea>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="dish-button">
+        <input type="submit" value="Submit" class="dish_input_button">
+      </div>
+    </form>
+  </div>
+
+</body>
+<script>
+  const image_input = document.querySelector("#dish_img_output");
+  image_input.addEventListener("change", function () {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+      const uploaded_image = reader.result;
+      console.log(uploaded_image);
+      document.querySelector("#dish_img_file").style.backgroundImage = `url(${uploaded_image})`;
+    });
+    reader.readAsDataURL(this.files[0]);
+  });
+</script>
+
+</html>

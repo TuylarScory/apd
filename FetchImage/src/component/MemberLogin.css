@@ -1,0 +1,34 @@
+
+.middle{
+    background-color: coral;
+    height: 30em;
+    width: auto;
+}
+.middle h3{
+    text-align: center;
+    padding-top: 5%;
+    color: white;
+    
+}
+.loginform{
+    margin: 0 35% 0 35%;
+    border: 2px solid white;
+    
+}
+.login-inside {
+    padding: 10%;
+    margin: 0;
+}
+#emailAddress{
+    margin: -1em 0 10% 30%;
+    display: flex;
+    
+}
+#pwd{
+    margin-left: 1.7em;
+
+}
+#sbtlogin{
+    margin-left: 30%;
+
+}

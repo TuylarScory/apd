@@ -1,0 +1,85 @@
+/* body  */
+.first_div {
+    text-align: justify;
+    width: 90%;
+    margin: auto;
+    line-height: 2em;
+}
+.second_div {
+    display: flex;
+    margin: 3em 0;
+}
+.second_div .left_img {
+    width: 40%;
+}
+.second_div .left_img  img{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.second_div .right_text {
+    width: 60%;
+    line-height: 2em;
+    text-align: justify;
+    padding-right: 4em;
+    align-items: center;
+    margin: auto;
+}
+.third_div { 
+    margin-bottom: 3em;
+}
+.third_div .team {
+    width: 80%;
+    margin: auto;
+}
+.third_div .team .row {
+    display: flex; 
+    margin: 2em 0;
+}
+.third_div .team .row .col {
+    width: 25%;
+    margin: auto;    
+}
+.third_div .team .row .col .img_1 {
+    border-radius: 50%;
+    width: 100%;
+    height: 43vh;
+    
+}
+.third_div .team .row .col .img_2 {
+    border-radius: 50%;
+    width: 100%;
+}
+.third_div .team .row .col .img_3 {
+    border-radius: 50%;
+    width: 100%;
+    height: 43vh;
+}
+.third_div .team .row_1 {
+    display: flex; 
+    margin: 0 5em;
+
+}
+.third_div .team .row_1 .col_1 {
+    width: 50%;
+    margin: auto;  
+}
+.third_div .team .row_1 .col_1 .img_4 {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 50%;
+    width: 60%;
+    height: 45vh;
+}
+.third_div .team .row_1 .col_1 .img_5 {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 50%;
+    width: 60%;
+    height: 45vh;
+}
+
+

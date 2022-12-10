@@ -1,0 +1,79 @@
+
+.footer .first{
+    display: flex;
+    height: 180px;
+    border-top: 1px solid rgb(210, 205, 205);
+}
+.footer .first .web-logo {
+    width: 20%;
+    margin: auto;
+    text-align: center;
+}
+.footer .first .web-logo img {
+    width: 20%;
+} 
+.footer .first .info {
+    width: 40%;
+    margin: auto;
+}
+.footer .first .info a {
+    text-decoration: none;
+    color: black;
+}
+.footer .first .follow-us {
+    width: 40%;
+    margin: auto;
+}
+
+.footer .second {
+    text-align: center;
+}
+
+.social{
+    display : inline-block;
+    width : 40px;
+    height : 40px;
+    padding : 8px;
+    border-radius:100%;
+    background-color : rgb(241, 232, 232);
+    margin:10px;
+    transition: all 0.5s ease-in-out;
+}
+.social svg{
+    transition: transform 0.5s ease-out;
+}
+.social:hover{
+    border-radius:10%;
+    transform: rotate(405deg);
+}
+.social:hover svg{
+    transform: rotate(315deg);
+}
+.facebook{
+    fill: #3b5998;
+}
+.facebook:hover{
+    fill:white;
+    background: #3b5998;
+}
+.twitter{
+	fill: #4099FF;
+}
+.twitter:hover{
+    fill:white;
+	background:#4099FF;
+}
+.instagram{
+	fill: #D01E58;
+}
+.instagram:hover{
+    fill:white;
+    background-image: linear-gradient(#7F3CB0, #C32F79, #F91903, #F9C301 )
+}
+.youtube{
+	fill: #D01E58;
+}
+.youtube:hover{
+    fill:white;
+    background: red;
+}

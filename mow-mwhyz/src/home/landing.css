@@ -1,0 +1,51 @@
+
+.text {
+    /* background-color: blue; */
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    padding: 20px 0;
+}
+.banner {
+    background-image: url('../img/photo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    width: 70%;
+    margin: auto;
+    border-radius: 3%;
+}
+.end {
+    margin-top: 50px;
+}
+.end p {
+    text-align: center;
+    font-size: 35px;
+}
+.list {
+    width: 60%;
+    margin: auto;
+}
+.list .row-1 {
+    display: flex;
+    margin: auto;
+}
+.list .row-1 div {
+    width: 30%;
+    margin: auto;
+}
+.list .col {
+
+    text-align: center;
+}
+.list .col img{
+    width: 100%;
+}
+.list .col h3{
+    font-size: 25px;
+}
+.list.row-2 {
+    display: flex;
+    margin: auto;
+}

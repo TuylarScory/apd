@@ -1,0 +1,28 @@
+
+.thank_body {
+    width: 40%;
+    margin: auto;
+    margin-bottom: 4em;
+}
+.thank_img {
+    width: 100%;
+    height: 400px;
+}
+.thank_text {
+    text-align: center;
+}
+.thank_button {
+    margin-top: 2em;
+}
+.thank_btn {
+    background-color: #FF7F50;
+    border: 1px solid coral;
+    text-decoration: none;
+    color: white;
+    padding: 7px 25px;
+
+}
+.thank_btn:hover {
+    background-color: #7067AA;
+    border: 1px solid slateblue;
+}

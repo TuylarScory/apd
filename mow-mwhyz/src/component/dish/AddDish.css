@@ -1,0 +1,79 @@
+
+.dish-title {
+    text-align: center;
+}
+
+.dish-form {
+    display: flex;
+    width: 55%;
+    margin: 1em auto;
+}
+.dish-left {
+    width: 46%;
+    text-align: center;
+    border: 3px dashed pink;
+    height: auto;
+    margin-right: 1em;
+}
+#dish_img_output {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+}
+.dish-right {
+    background-color: teal;
+    width: 54%;
+}
+.dish-img-label {   
+    position: relative;
+    top: 30%;
+    background-color: rebeccapurple;
+    border: 1px solid salmon;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 2em;
+}
+.dish_input_field {
+    margin: 10px 0;
+    padding: 8px 15px;
+    display: flex;
+    width: 100%;
+}
+.dish_input_field .input_left {
+    width: 40%;
+    padding-top: 6px;
+    padding-left: 8px;
+}
+.dish_input_field .input_right {
+    width: 60%;
+}
+.dish_input_field label {
+    font-weight: bold;
+}
+.dish_input_field input{
+    padding: 8px 20px;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 65%;
+}
+.dish_input_field textarea {
+    width: 80%;
+}
+.dish-button {
+    text-align: center;
+}
+.dish_input_button {
+    width: 10%;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-bottom: 2em;
+}
+#dish_img_text_alert {
+    font-size: 20px;
+    margin: 30px;
+}
