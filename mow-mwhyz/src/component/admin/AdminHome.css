@@ -22,7 +22,7 @@
   margin: 0.9em auto;
 }
 
-table {
+.table {
   width: 100%;
   table-layout: fixed;
 }
@@ -39,7 +39,7 @@ table {
   width: 5%;
   text-align: center;
 }
-th {
+.table #admin_th {
   padding: 20px 10px;
   text-align: left;
   font-weight: 500;
@@ -48,7 +48,7 @@ th {
   color: black;
   text-transform: uppercase;
 }
-td {
+.table #admin_td{
   padding: 10px;
   text-align: left;
   vertical-align: middle;
@@ -89,6 +89,12 @@ td {
   text-transform: uppercase;
   color:  white;
 }
-.isCareGiver {
+#isCareGiver {
   text-align: center;
+  padding: 10px;
+  vertical-align: middle;
+  font-weight: 300;
+  font-size: 14px;
+  color: black;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
 }

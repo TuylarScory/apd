@@ -57,7 +57,7 @@ export class AppHeader extends Component {
                                                     <NavLink to="/add_admin" >Add admin</NavLink>
                                                 </li>
                                                 <li>
-                                                    <NavLink to="/contact" >Request Meal List</NavLink>
+                                                    <NavLink to="/request_meal" >Request Meal List</NavLink>
                                                 </li>
                                                 <li>
                                                     <NavLink to="/admin" >Admin Home</NavLink>

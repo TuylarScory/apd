@@ -110,36 +110,38 @@ export class AdminHome extends Component {
                         <div class="admin_col_1">
                             <h3 class="admin_h3">Pending member</h3>
                             <div class="tbl-header">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" className='table' cellspacing="0" border="0">
                                     <thead>
                                         <tr>
-                                            <th class="table_id">Id</th>
-                                            <th>Name</th>
-                                            <th>Email </th>
-                                            <th>Condition </th>
-                                            <th>Status </th>
-                                            <th>Action</th>
+                                            <th class="table_id" id="admin_th">Id</th>
+                                            <th id="admin_th">Name</th>
+                                            <th id="admin_th">Email </th>
+                                            <th id="admin_th">Condition </th>
+                                            <th id="admin_th">Status </th>
+                                            <th id="admin_th">Action</th>
                                         </tr>
                                     </thead>
                                 </table>
                             </div>
 
                             <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <tbody>
                                         {
                                             this.state.members.map(member =>
                                                 <tr key={member.id}>
-                                                    <td class="table_id">{member.id}</td>
-                                                    <td>{member.memberName}</td>
-                                                    <td>{member.email}</td>
-                                                    <td>{member.memberCondition}</td>
-                                                    <td>{member.memberStatus}</td>
-                                                    <td><button type="button" class="approve" onClick={
+                                                    <td id="admin_td" class="table_id">{member.id}</td>
+                                                    <td id="admin_td">{member.memberName}</td>
+                                                    <td id="admin_td">{member.email}</td>
+                                                    <td id="admin_td">{member.memberCondition}</td>
+                                                    <td id="admin_td">{member.memberStatus}</td>
+                                                    <td id="admin_td">
+                                                        <button type="button" class="approve" onClick={
                                                         () => {
                                                             this.approveMember(member.email);
-                                                        window.location.reload(false)}
-                                                        }>Approve</button>
+                                                            window.location.reload(false)
+                                                        }
+                                                    }>Approve</button>
                                                     </td>
                                                 </tr>
 
@@ -155,32 +157,34 @@ export class AdminHome extends Component {
                         <div class="admin_col_2">
                             <h3 class="admin_h3">All Member</h3>
                             <div class="tbl-header">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <thead>
                                         <tr>
-                                            <th class="table_id">Id</th>
-                                            <th>Name</th>
-                                            <th>Email </th>
-                                            <th>Condition </th>
-                                            <th>Status </th>
-                                            <th>Action</th>
+                                            <th class="table_id" id="admin_th">Id</th>
+                                            <th id="admin_th">Name</th>
+                                            <th id="admin_th">Email </th>
+                                            <th id="admin_th">Condition </th>
+                                            <th id="admin_th">Status </th>
+                                            <th id="admin_th">Action</th>
                                         </tr>
                                     </thead>
                                 </table>
                             </div>
 
                             <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <tbody>
                                         {
                                             this.state.allMembers.map(member =>
                                                 <tr>
-                                                    <td class="table_id">{member.id}</td>
-                                                    <td>{member.memberName}</td>
-                                                    <td>{member.email}</td>
-                                                    <td>{member.memberCondition}</td>
-                                                    <td>{member.memberStatus}</td>
-                                                    <td><button type="button" class="view" onClick={() => this.getMember(member.id)}>View</button></td>
+                                                    <td  id="admin_td" class="table_id">{member.id}</td>
+                                                    <td id="admin_td">{member.memberName}</td>
+                                                    <td id="admin_td">{member.email}</td>
+                                                    <td id="admin_td">{member.memberCondition}</td>
+                                                    <td id="admin_td">{member.memberStatus}</td>
+                                                    <td id="admin_td">
+                                                        <button type="button" class="view" onClick={() => this.getMember(member.id)}>View</button>
+                                                        </td>
 
                                                 </tr>
                                             )
@@ -201,32 +205,33 @@ export class AdminHome extends Component {
                         <div class="admin_col_1">
                             <h3 class="admin_h3">Pending partner</h3>
                             <div class="tbl-header">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <thead>
                                         <tr>
-                                            <th class="table_id">Id</th>
-                                            <th>Name</th>
-                                            <th>Email </th>
-                                            <th>Role </th>
-                                            <th>Status </th>
-                                            <th>Action</th>
+                                            <th id="admin_th" class="table_id">Id</th>
+                                            <th id="admin_th">Name</th>
+                                            <th id="admin_th">Email </th>
+                                            <th id="admin_th">Role </th>
+                                            <th id="admin_th">Status </th>
+                                            <th id="admin_th">Action</th>
                                         </tr>
                                     </thead>
                                 </table>
                             </div>
 
                             <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <tbody>
                                         {
                                             this.state.partners.map(partner =>
                                                 <tr key={partner.id}>
-                                                    <td class="table_id">{partner.id}</td>
-                                                    <td>{partner.partnerName}</td>
-                                                    <td>{partner.email}</td>
-                                                    <td>{partner.partnerRole}</td>
-                                                    <td>{partner.partnerStatus}</td>
-                                                    <td><button type="button" class="approve" onClick={() => this.approveMember(partner.email)}>APPROVE</button>
+                                                    <td  id="admin_td" class="table_id">{partner.id}</td>
+                                                    <td id="admin_td">{partner.partnerName}</td>
+                                                    <td id="admin_td">{partner.email}</td>
+                                                    <td id="admin_td">{partner.partnerRole}</td>
+                                                    <td id="admin_td">{partner.partnerStatus}</td>
+                                                    <td id="admin_td">
+                                                        <button type="button" class="approve" onClick={() => this.approveMember(partner.email)}>APPROVE</button>
                                                     </td>
                                                 </tr>
                                             )
@@ -241,32 +246,34 @@ export class AdminHome extends Component {
                         <div class="admin_col_2">
                             <h3 class="admin_h3">All partner</h3>
                             <div class="tbl-header">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <thead>
                                         <tr>
-                                            <th class="table_id">Id</th>
-                                            <th>Name</th>
-                                            <th>Email </th>
-                                            <th>Role </th>
-                                            <th>Status </th>
-                                            <th>Action</th>
+                                            <th id="admin_th" class="table_id">Id</th>
+                                            <th id="admin_th">Name</th>
+                                            <th id="admin_th">Email </th>
+                                            <th id="admin_th">Role </th>
+                                            <th id="admin_th">Status </th>
+                                            <th id="admin_th">Action</th>
                                         </tr>
                                     </thead>
                                 </table>
                             </div>
 
                             <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <tbody>
                                         {
                                             this.state.allPartners.map(partner =>
                                                 <tr key={partner.id}>
-                                                    <td class="table_id">{partner.id}</td>
-                                                    <td>{partner.partnerName}</td>
-                                                    <td>{partner.email}</td>
-                                                    <td>{partner.partnerRole}</td>
-                                                    <td>{partner.partnerStatus}</td>
-                                                    <td>   <button type="button" class="view" onClick={() => this.getPartner(partner.id)}>View</button></td>
+                                                    <td id="admin_td" class="table_id">{partner.id}</td>
+                                                    <td id="admin_td">{partner.partnerName}</td>
+                                                    <td id="admin_td">{partner.email}</td>
+                                                    <td id="admin_td">{partner.partnerRole}</td>
+                                                    <td id="admin_td">{partner.partnerStatus}</td>
+                                                    <td id="admin_td">   
+                                                        <button type="button" class="view" onClick={() => this.getPartner(partner.id)}>View</button>
+                                                        </td>
                                                 </tr>
                                             )
                                         }
@@ -284,42 +291,41 @@ export class AdminHome extends Component {
                         <div class="admin_col_1">
                             <h3 class="admin_h3">Pending volunteer</h3>
                             <div class="tbl-header">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <thead>
                                         <tr>
-                                            <th class="table_id">Id</th>
-                                            <th>Name</th>
-                                            <th>Email </th>
-                                            <th>IsCareGiver?</th>
+                                            <th id="admin_th" class="table_id">Id</th>
+                                            <th id="admin_th">Name</th>
+                                            <th id="admin_th">Email </th>
+                                            <th id="admin_th">IsCareGiver?</th>
 
-                                            <th>Status </th>
-                                            <th>Action</th>
+                                            <th id="admin_th">Status </th>
+                                            <th id="admin_th">Action</th>
                                         </tr>
                                     </thead>
                                 </table>
                             </div>
 
                             <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <tbody>
                                         {
                                             this.state.volunteers.map(volunteer =>
                                                 <tr key={volunteer.id}>
-                                                    <td class="table_id">{volunteer.id}</td>
-                                                    <td>{volunteer.volunteerName}</td>
-                                                    <td>{volunteer.email}</td>
+                                                    <td id="admin_td" class="table_id">{volunteer.id}</td>
+                                                    <td id="admin_td">{volunteer.volunteerName}</td>
+                                                    <td id="admin_td">{volunteer.email}</td>
                                                     {
-                                            JSON.stringify(volunteer.volunteerIsCareGiver) === 'true' ?
-                                            <td  className='isCareGiver'>Yes</td>
-                                            : <td  className='isCareGiver'>No</td>
-                                        }
+                                                        JSON.stringify(volunteer.volunteerIsCareGiver) === 'true' ?
+                                                            <td  id='isCareGiver'>Yes</td>
+                                                            : <td id='isCareGiver'>No</td>
+                                                    }
 
 
+                                                    <td id="admin_td">{volunteer.volunteerStatus}</td>
 
-                                                    {/* <td>{volunteer.volunteerROLE}</td> */}
-                                                    <td>{volunteer.volunteerStatus}</td>
-
-                                                    <td><button type="button" class="approve" onClick={() => this.approveMember(volunteer.email)}>APPROVE</button>
+                                                    <td id="admin_td">
+                                                        <button type="button" class="approve" onClick={() => this.approveMember(volunteer.email)}>APPROVE</button>
                                                     </td>
                                                 </tr>
                                             )
@@ -334,38 +340,40 @@ export class AdminHome extends Component {
                         <div class="admin_col_2">
                             <h3 class="admin_h3">All volunteer</h3>
                             <div class="tbl-header">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <thead>
                                         <tr>
-                                            <th class="table_id">Id</th>
-                                            <th>Name</th>
-                                            <th>Email </th>
-                                            <th>IsCareGiver? </th>
-                                            <th>Status </th>
-                                            <th>Action</th>
+                                            <th id="admin_th" class="table_id">Id</th>
+                                            <th id="admin_th">Name</th>
+                                            <th id="admin_th">Email </th>
+                                            <th id="admin_th">IsCareGiver? </th>
+                                            <th id="admin_th">Status </th>
+                                            <th id="admin_th">Action</th>
                                         </tr>
                                     </thead>
                                 </table>
                             </div>
 
                             <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0">
+                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <tbody>
                                         {
 
                                             this.state.allVolunteers.map(volunteer =>
                                                 <tr key={volunteer.id}>
-                                                    <td class="table_id">{volunteer.id}</td>
-                                                    <td>{volunteer.volunteerName}</td>
-                                                    <td>{volunteer.email}</td>
+                                                    <td id="admin_td" class="table_id">{volunteer.id}</td>
+                                                    <td id="admin_td">{volunteer.volunteerName}</td>
+                                                    <td id="admin_td">{volunteer.email}</td>
                                                     {
-                                            JSON.stringify(volunteer.volunteerIsCareGiver) === 'true' ?
-                                            <td className='isCareGiver'>Yes</td>
-                                            : <td  className='isCareGiver'>No</td>
-                                        }
-                                                    <td>{volunteer.volunteerStatus}</td>
+                                                        JSON.stringify(volunteer.volunteerIsCareGiver) === 'true' ?
+                                                            <td id='isCareGiver'>Yes</td>
+                                                            : <td  id='isCareGiver'>No</td>
+                                                    }
+                                                    <td id="admin_td">{volunteer.volunteerStatus}</td>
 
-                                                    <td>   <button type="button" class="view" onClick={() => this.getVolunteer(volunteer.id)}>View</button></td>
+                                                    <td id="admin_td">
+                                                        <button type="button" class="view" onClick={() => this.getVolunteer(volunteer.id)}>View</button>
+                                                    </td>
                                                 </tr>
                                             )
                                         }

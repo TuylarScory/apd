@@ -133,8 +133,8 @@ export class App extends Component {
           <PrivateRoute path="/profile" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
             component={Profile}></PrivateRoute>
 
-          <Route path="/get/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
-            component={SingleMember}></Route>
+          <PrivateRoute path="/get/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={SingleMember}></PrivateRoute>
 
           <PrivateRoute path="/getPartner/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
             component={SinglePartner}></PrivateRoute>
@@ -145,6 +145,7 @@ export class App extends Component {
           <Route path="/about" component={About}></Route>
           <Route path="/contact" component={Contact}></Route>
           <Route path="/privacy" component={Privacy}></Route>
+
           <Route path="/thanku" render={(props) => <Thank authenticated={this.state.authenticated} {...props} />}></Route>
 
 
