@@ -121,7 +121,7 @@ class Dish extends Component {
         console.log(files);
 
 
-        formData.append('user', JSON.stringify(dish));  //should be user in next version 2
+        formData.append('dish', JSON.stringify(dish));  //should be user in next version 2
         formData.append('file', files)
         formData.append('name', fileData.name)
         formData.append('type', fileData.type)
@@ -259,7 +259,7 @@ class Dish extends Component {
                                         <label for="dish-desc">Description</label>
                                     </div>
                                     <div class="input_right">
-                                        <textarea id="dish-desc" name="dishDescription"  value={this.state.dishDescription} rows="4" required></textarea>
+                                        <textarea id="dish-desc" name="dishDescription"  rows="4" required>{this.state.dishDescription}</textarea>
                                     </div>
                                 </div>
                             </div>
