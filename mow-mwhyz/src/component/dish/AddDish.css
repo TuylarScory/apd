@@ -11,17 +11,20 @@
 .dish-left {
     width: 46%;
     text-align: center;
-    border: 3px dashed pink;
     height: auto;
     margin-right: 1em;
 }
 #dish_img_output {
-    border: none;
-    outline: none;
+
     width: 100%;
     height: 400px;
     background-position: center;
     background-size: cover;
+    border: 4px dotted salmon;
+}
+.dish_img_output_1 {
+    position: relative;
+    z-index: 1;
 }
 .dish-right {
     background-color: teal;

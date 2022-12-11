@@ -41,6 +41,10 @@ class Dish extends Component {
         preview.src = URL.createObjectURL(event.target.files[0])
         var img_file = event.target.files[0]
 
+        if(preview.src === preview.src) {
+            preview.classList.add("dish_img_output_1")
+        }
+
         this.setState({
             imagePath: img_file,
             profileImage: img_file,
