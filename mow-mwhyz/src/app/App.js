@@ -38,9 +38,6 @@ import AllVolunteer from '../component/admin/AllList/AllVolunteer';
 import SingleDish from '../component/admin/SingleView/SingleDish';
 import PartnerDish from '../component/partner/PartnerDish';
 import ApproveDish from '../component/partner/ApproveDish';
-import ViewDish from '../component/member/ViewDish';
-import CurrentUserMOD from '../component/member/CurrentUserMOD';
-import SingleMOD from '../component/member/SingleMOD'
 import MealList from '../component/member/MealList';
 
 
@@ -213,12 +210,7 @@ export class App extends Component {
 
           <Route path="/thanku" render={(props) => <Thank authenticated={this.state.authenticated} {...props} />}></Route>
 
-          <PrivateRoute path="/viewDish/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
-            component={ViewDish}></PrivateRoute>
-          <Route path="/userMOD"
-            component={CurrentUserMOD}></Route>
-          <Route path="/singleMod/:id"
-            component={SingleMOD}></Route>
+         
         </Switch>
 
 
