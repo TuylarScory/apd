@@ -1,0 +1,76 @@
+.single_main {
+  /* background-color: red; */
+  width: 60%;
+  margin: 2em auto;
+  border: 1px solid #ff7f50;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+}
+.single_btn_div {
+  margin: 1em auto;
+  width: 30%;
+}
+
+.single_button {
+  --b: 3px; /* border thickness */
+  --s: 0.45em; /* size of the corner */
+  --color: #373b44;
+  padding: calc(0.7em + var(--s)) calc(1.5em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  border: 0;
+
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.single_button:hover,
+.single_button:focus-visible {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: 0.05em;
+}
+
+.single_button:active {
+  background: #f77b4d;
+  color: #fff;
+}
+
+.single_img {
+  width: 40%;
+  margin: auto;
+}
+#profile_img {
+  width: 100%;
+  height: 400px;
+}
+.single_card {
+  width: 60%;
+}
+.single_table {
+  margin: auto 1em;
+}
+.single_table_td {
+  padding: 20px;
+  width: 35%;
+}
+
+.single_table_th {
+  padding: 20px 20px;
+}

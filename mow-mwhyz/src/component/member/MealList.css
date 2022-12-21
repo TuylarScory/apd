@@ -1,0 +1,88 @@
+.meal-list-title {
+  font-size: 1.8em;
+  text-align: center;
+  padding: 1em;
+}
+.meal-list {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.meal-list-card {
+  width: 30%;
+  margin: 1em;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.meal-list-card-title {
+  font-style: oblique;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  padding: 1em;
+  font-size: 1.5em;
+}
+.meal-list-img {
+  width: 100%;
+  height: 53vh;
+}
+.meal-list-sugg {
+  display: flex;
+  margin: 1.5em;
+}
+.meal-list-card-suggestion {
+  color: #474755;
+}
+#meal-food {
+  margin-right: 1.5em;
+  color: #474755;
+}
+
+.meal-list-card-arrow {
+  text-align: right;
+  margin: auto;
+}
+#arrow-icon {
+  padding: 5px 1em;
+  cursor: pointer;
+}
+.meal-card-btn {
+  transition: top 5s ease;
+  display: none;
+}
+#arrow-icon:hover {
+  display: none;
+}
+
+#arrow-icon:hover + .meal-card-btn {
+  display: block;
+  background-color: black;
+  padding: 1em 2em;
+  width: 50%;
+  text-transform: uppercase;
+  border: 0;
+  color: white;
+  float: right;
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+}
+.meal-back-div {
+  margin: 1em auto;
+  width: 10%;
+}
+.meal-back-btn {
+  border: 1px solid #474755;
+  background-color: transparent;
+  padding: 0.8em 2em;
+  border-radius: 25px;
+  margin: auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  color: #fa6900;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.meal-back-btn:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}

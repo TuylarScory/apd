@@ -13,19 +13,35 @@ import Register from '../component/signup/Register';
 import About from '../component/aboutus/About';
 import Contact from '../component/contact/Contact';
 import AdminHome from '../component/admin/AdminHome';
-import Profile from '../component/profile/Profile';
 import Alert from 'react-s-alert';
 import LoadingIndicator from './LoadingIndicator'
 import AddAdmin from '../component/admin/AddAdmin';
 import Privacy from '../component/t&c/Privacy';
 import Thank from '../component/thanku/Thank';
-import SingleMember from '../component/admin/SingleMember'
-import SinglePartner from '../component/admin/SinglePartner'
-import SingleVolunteer from '../component/admin/SingleVolunteer'
+import SingleMember from '../component/admin/SingleView/SingleMember'
+import SinglePartner from '../component/admin/SingleView/SinglePartner'
+import SingleVolunteer from '../component/admin/SingleView/SingleVolunteer'
 import PartnerHome from '../component/partner/PartnerHome';
 import MemberHome from '../component/member/MemberHome'
 import VolunteerHome from '../component/volunteer/VolunteerHome'
 import AddDish from '../component/dish/AddDish';
+import MemberProfile from '../component/profile/MemberProfile';
+import PartnerProfile from '../component/profile/PartnerProfile';
+import VolunteerProfile from '../component/profile/VolunteerProfile';
+import AdminProfile from '../component/profile/AdminProfile';
+import SingleApprovedDish from '../component/admin/SingleApprovedDish';
+import AllDish from '../component/admin/AllList/AllDish';
+import DishStatus from '../component/admin/DishStatus';
+import AllMember from '../component/admin/AllList/AllMember';
+import AllPartner from '../component/admin/AllList/AllPartner';
+import AllVolunteer from '../component/admin/AllList/AllVolunteer';
+import SingleDish from '../component/admin/SingleView/SingleDish';
+import PartnerDish from '../component/partner/PartnerDish';
+import ApproveDish from '../component/partner/ApproveDish';
+import ViewDish from '../component/member/ViewDish';
+import CurrentUserMOD from '../component/member/CurrentUserMOD';
+import SingleMOD from '../component/member/SingleMOD'
+import MealList from '../component/member/MealList';
 
 
 export const ACCESS_TOKEN = 'accessToken';
@@ -108,6 +124,7 @@ export class App extends Component {
 
           <Route path="/register" render={(props) => <Register authenticated={this.state.authenticated} {...props} />}></Route>
 
+          {/* Home page  */}
           <PrivateRoute path="/admin" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
             component={AdminHome}></PrivateRoute>
 
@@ -122,18 +139,52 @@ export class App extends Component {
 
 
 
+          {/* Add Form  */}
           <PrivateRoute path="/add_admin" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
             component={AddAdmin}></PrivateRoute>
 
-<PrivateRoute path="/add_dish" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+          <PrivateRoute path="/add_dish" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
             component={AddDish}></PrivateRoute>
 
 
 
-          <PrivateRoute path="/profile" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
-            component={Profile}></PrivateRoute>
+          {/* Profile  */}
+          <PrivateRoute path="/member_profile" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={MemberProfile}></PrivateRoute>
 
-          <PrivateRoute path="/get/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+          <PrivateRoute path="/partner_profile" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={PartnerProfile}></PrivateRoute>
+
+          <PrivateRoute path="/volunteer_profile" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={VolunteerProfile}></PrivateRoute>
+
+          <PrivateRoute path="/admin_profile" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={AdminProfile}></PrivateRoute>
+
+
+          {/* View Meal Status  */}
+          <PrivateRoute path="/getMealStatus/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={DishStatus}></PrivateRoute>
+
+
+
+          {/* View All Meal  */}
+          <PrivateRoute path="/getAllMeals/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={AllDish}></PrivateRoute>
+
+          <PrivateRoute path="/getAllMembers" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={AllMember}></PrivateRoute>
+
+          <PrivateRoute path="/getAllPartners" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={AllPartner}></PrivateRoute>
+
+          <PrivateRoute path="/getAllVolunteers" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={AllVolunteer}></PrivateRoute>
+
+
+
+          {/* Single Page  */}
+          <PrivateRoute path="/getMember/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
             component={SingleMember}></PrivateRoute>
 
           <PrivateRoute path="/getPartner/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
@@ -142,13 +193,32 @@ export class App extends Component {
           <PrivateRoute path="/getVolunteer/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
             component={SingleVolunteer}></PrivateRoute>
 
+          <PrivateRoute path="/getDish/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={SingleDish}></PrivateRoute>
+
+
+          <PrivateRoute path="/getApproveDish" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={PartnerDish}></PrivateRoute>
+
+          <PrivateRoute path="/getADish/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={ApproveDish}></PrivateRoute>
+
+            {/* Approved Meal List for Member  */}
+            <PrivateRoute path="/meallist/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser} 
+              component={MealList}></PrivateRoute>
+
           <Route path="/about" component={About}></Route>
           <Route path="/contact" component={Contact}></Route>
           <Route path="/privacy" component={Privacy}></Route>
 
           <Route path="/thanku" render={(props) => <Thank authenticated={this.state.authenticated} {...props} />}></Route>
 
-
+          <PrivateRoute path="/viewDish/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={ViewDish}></PrivateRoute>
+          <Route path="/userMOD"
+            component={CurrentUserMOD}></Route>
+          <Route path="/singleMod/:id"
+            component={SingleMOD}></Route>
         </Switch>
 
 

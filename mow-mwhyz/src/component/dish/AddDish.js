@@ -8,8 +8,8 @@ export const API_BASE_URL = 'http://localhost:8080';
 export const ACCESS_TOKEN = 'accessToken';
 
 
- class AddDish extends Component {
-    
+class AddDish extends Component {
+
     render() {
 
         if (this.props.authenticated) {
@@ -24,16 +24,16 @@ export const ACCESS_TOKEN = 'accessToken';
             <div className="signup-container">
 
 
-            <Dish {...this.props} />
+                <Dish {...this.props} />
 
-        </div>
+            </div>
         )
     }
 }
 
 class Dish extends Component {
 
-    
+
     fileSelectedHandler = event => {
 
         var preview = document.getElementById('dish_img_output');
@@ -41,7 +41,7 @@ class Dish extends Component {
         preview.src = URL.createObjectURL(event.target.files[0])
         var img_file = event.target.files[0]
 
-        if(preview.src === preview.src) {
+        if (preview.src === preview.src) {
             preview.classList.add("dish_img_output_1")
         }
 
@@ -172,15 +172,15 @@ class Dish extends Component {
                     </div>
                     <form onSubmit={this.handleSubmit}>
                         <div class="dish-form">
-                            
+
                             <div class="dish-left">
                                 <h3 id="dish_img_text_alert">Please only upload image under 1MB!</h3>
-                                <input type="file" id="dish_img_file" style={{display:"none"}} name="profileImage" onChange={this.fileSelectedHandler}/>
-                                
+                                <input type="file" id="dish_img_file" style={{ display: "none" }} name="profileImage" onChange={this.fileSelectedHandler} />
+
                                 <label for="dish_img_file" class="dish-img-label">+ </label>
                                 <img id="dish_img_output" />
-                                
-                                
+
+
 
                             </div>
                             <div class="dish-right">
@@ -189,7 +189,7 @@ class Dish extends Component {
                                         <label for="dish-name">Meal Name</label>
                                     </div>
                                     <div class="input_right">
-                                        <input type="text" id="dish-name" name="dishName" maxLength="64"  value={this.state.dishName}
+                                        <input type="text" id="dish-name" name="dishName" maxLength="64" value={this.state.dishName}
                                             onChange={this.handleInputChange} required></input>
                                     </div>
 
@@ -200,7 +200,7 @@ class Dish extends Component {
                                         <label for="dish-calorie">Calorie</label>
                                     </div>
                                     <div class="input_right">
-                                        <input type="text" id="dish-calorie" name="calorie" maxLength="64"  value={this.state.calorie}
+                                        <input type="text" id="dish-calorie" name="calorie" maxLength="64" value={this.state.calorie}
                                             onChange={this.handleInputChange} required></input>
                                     </div>
                                 </div>
@@ -209,7 +209,7 @@ class Dish extends Component {
                                         <label for="dish-fat">Fat</label>
                                     </div>
                                     <div class="input_right">
-                                        <input type="text" id="dish-fat" name="fat" maxLength="64"  value={this.state.fat} onChange={this.handleInputChange}
+                                        <input type="text" id="dish-fat" name="fat" maxLength="64" value={this.state.fat} onChange={this.handleInputChange}
                                             required></input>
                                     </div>
                                 </div>
@@ -218,7 +218,7 @@ class Dish extends Component {
                                         <label for="dish-sugar">Sugar</label>
                                     </div>
                                     <div class="input_right">
-                                        <input type="text" id="dish-sugar" name="sugar" maxLength="64"  value={this.state.sugar} onChange={this.handleInputChange}
+                                        <input type="text" id="dish-sugar" name="sugar" maxLength="64" value={this.state.sugar} onChange={this.handleInputChange}
                                             required></input>
                                     </div>
                                 </div>
@@ -227,7 +227,7 @@ class Dish extends Component {
                                         <label for="dish-carbs">Carbohydrate</label>
                                     </div>
                                     <div class="input_right">
-                                        <input type="text" id="dish-carbs" name="carbs" maxLength="64"  value={this.state.carbs} onChange={this.handleInputChange}
+                                        <input type="text" id="dish-carbs" name="carbs" maxLength="64" value={this.state.carbs} onChange={this.handleInputChange}
                                             required></input>
                                     </div>
                                 </div>
@@ -236,7 +236,7 @@ class Dish extends Component {
                                         <label for="dish-fibre">Fiber</label>
                                     </div>
                                     <div class="input_right">
-                                        <input type="text" id="dish-fibre" name="fibre" maxLength="64"  value={this.state.fibre} onChange={this.handleInputChange}
+                                        <input type="text" id="dish-fibre" name="fibre" maxLength="64" value={this.state.fibre} onChange={this.handleInputChange}
                                             required></input>
                                     </div>
                                 </div>
@@ -245,7 +245,7 @@ class Dish extends Component {
                                         <label for="dish-protein">Protein</label>
                                     </div>
                                     <div class="input_right">
-                                        <input type="text" id="dish-protein" name="protein" maxLength="64"  value={this.state.protein}
+                                        <input type="text" id="dish-protein" name="protein" maxLength="64" value={this.state.protein}
                                             onChange={this.handleInputChange} required></input>
                                     </div>
                                 </div>
@@ -254,7 +254,7 @@ class Dish extends Component {
                                         <label for="dish-suggestion">Suggestion</label>
                                     </div>
                                     <div class="input_right">
-                                        <input type="text" id="dish-suggestion" name="suggestion" maxLength="64"  value={this.state.suggestion}
+                                        <input type="text" id="dish-suggestion" name="suggestion" maxLength="64" value={this.state.suggestion}
                                             onChange={this.handleInputChange} required></input>
                                     </div>
                                 </div>
@@ -263,7 +263,7 @@ class Dish extends Component {
                                         <label for="dish-desc">Description</label>
                                     </div>
                                     <div class="input_right">
-                                        <textarea id="dish-desc" name="dishDescription"  rows="4" required>{this.state.dishDescription}</textarea>
+                                        <textarea id="dish-desc" name="dishDescription" onChange={this.handleInputChange} rows="4" required>{this.state.dishDescription}</textarea>
                                     </div>
                                 </div>
                             </div>

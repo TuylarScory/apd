@@ -8,7 +8,7 @@ export class AppHeader extends Component {
     constructor(props) {
         super(props);
         console.log(props);
-        
+
     }
 
     render() {
@@ -57,10 +57,10 @@ export class AppHeader extends Component {
                                                     <NavLink to="/add_admin" >Add admin</NavLink>
                                                 </li>
                                                 <li>
-                                                    <NavLink to="/request_meal" >Request Meal List</NavLink>
+                                                    <NavLink to="/view_dish" ></NavLink>
                                                 </li>
                                                 <li>
-                                                    <NavLink to="/admin" >Admin Home</NavLink>
+                                                    <NavLink to="/admin" >Home</NavLink>
                                                 </li>
                                             </ul>
                                         </div>
@@ -70,7 +70,7 @@ export class AppHeader extends Component {
                                         <div className="nav-right">
                                             <ul>
                                                 <li>
-                                                    <NavLink to="/admin" >List</NavLink>
+                                                    <NavLink to="/admin_profile">Profile</NavLink>
                                                 </li>
                                                 <li>
                                                     <a onClick={this.props.onLogout} id="logout">Logout</a>
@@ -92,10 +92,10 @@ export class AppHeader extends Component {
                                                     <NavLink to="/add_dish" >Add Dish</NavLink>
                                                 </li>
                                                 <li>
-                                                    <NavLink to="/contact" >Partner Dish</NavLink>
+                                                    <NavLink to="/getApproveDish" >Meals</NavLink>
                                                 </li>
                                                 <li>
-                                                    <NavLink to="/partner" >PartnerHome Home</NavLink>
+                                                    <NavLink to="/partner" >Home</NavLink>
                                                 </li>
                                             </ul>
                                         </div>
@@ -105,7 +105,7 @@ export class AppHeader extends Component {
                                         <div className="nav-right">
                                             <ul>
                                                 <li>
-                                                    <NavLink to="/admin" >Add dish</NavLink>
+                                                    <NavLink to="/partner_profile" >Profile</NavLink>
                                                 </li>
                                                 <li>
                                                     <a onClick={this.props.onLogout} id="logout">Logout</a>
@@ -127,10 +127,10 @@ export class AppHeader extends Component {
                                                     <NavLink to="/" >Member</NavLink>
                                                 </li>
                                                 <li>
-                                                    <NavLink to="/" >Member</NavLink>
+                                                    <NavLink to="/" >Shops</NavLink>
                                                 </li>
                                                 <li>
-                                                    <NavLink to="/member" >Member Home</NavLink>
+                                                    <NavLink to="/member" >Home</NavLink>
                                                 </li>
                                             </ul>
                                         </div>
@@ -140,7 +140,7 @@ export class AppHeader extends Component {
                                         <div className="nav-right">
                                             <ul>
                                                 <li>
-                                                    <NavLink to="/admin" >List</NavLink>
+                                                    <NavLink to="/member_profile" >Profile</NavLink>
                                                 </li>
                                                 <li>
                                                     <a onClick={this.props.onLogout} id="logout">Logout</a>
@@ -175,7 +175,7 @@ export class AppHeader extends Component {
                                         <div className="nav-right">
                                             <ul>
                                                 <li>
-                                                    <NavLink to="/admin" >List</NavLink>
+                                                    <NavLink to="/volunteer_profile" >Profile</NavLink>
                                                 </li>
                                                 <li>
                                                     <a onClick={this.props.onLogout} id="logout">Logout</a>

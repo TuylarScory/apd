@@ -4,7 +4,7 @@ import './AdminHome.css'
 import {
     approvedMember, getPendingMember, getAllMember,
     getPendingPartner, getAllPartner,
-    getPendingVolunteer, getAllVolunteer, getCurrentUser,
+    getPendingVolunteer, getAllVolunteer, getApprovedPartner, getApprovedMember, getApprovedVolunteer,
 } from '../../service/Service';
 
 export class AdminHome extends Component {
@@ -15,10 +15,13 @@ export class AdminHome extends Component {
         this.state = {
             members: [],
             allMembers: [],
+            approvedMembers: [],
             partners: [],
             allPartners: [],
+            approvedPartners: [],
             volunteers: [],
             allVolunteers: [],
+            approvedVolunteers: [],
             volunteerIsCareGiver: "",
 
         }
@@ -27,6 +30,7 @@ export class AdminHome extends Component {
 
 
     componentDidMount() {
+
         getPendingMember()
             .then((response) => {
                 this.setState({
@@ -38,6 +42,13 @@ export class AdminHome extends Component {
             .then((response) => {
                 this.setState({
                     allMembers: response
+                })
+            })
+
+        getApprovedMember()
+            .then((response) => {
+                this.setState({
+                    approvedMembers: response
                 })
             })
 
@@ -55,6 +66,13 @@ export class AdminHome extends Component {
                 })
             })
 
+        getApprovedPartner()
+            .then((response) => {
+                this.setState({
+                    approvedPartners: response
+                })
+            })
+
         getPendingVolunteer()
             .then((response) => {
                 this.setState({
@@ -69,6 +87,12 @@ export class AdminHome extends Component {
                 })
             })
 
+        getApprovedVolunteer()
+            .then((response) => {
+                this.setState({
+                    approvedVolunteers: response
+                })
+            })
 
     }
 
@@ -86,25 +110,37 @@ export class AdminHome extends Component {
 
 
     getMember = (id) => {
-        this.props.history.push(`/get/${id}`)
+        this.props.history.push(`/getMember/${id}`)
+    }
+
+    getAllMembers = () => {
+        this.props.history.push(`/getAllMembers`)
     }
 
     getPartner = (id) => {
         this.props.history.push(`/getPartner/${id}`)
     }
 
+    getAllPartners = () => {
+        this.props.history.push(`/getAllPartners`)
+    }
+
     getVolunteer = (id) => {
         this.props.history.push(`/getVolunteer/${id}`)
     }
 
-    addAdmin = () => {
-        this.props.history.push(`/addAdmin`)
+    getAllVolunteers = () => {
+        this.props.history.push(`/getAllVolunteers`)
     }
+
     render() {
         return (
             <>
                 <div className='admin_main'>
                     <h1 class="admin_home_h1">Member List</h1>
+                    <div class="all-meal-btn-div">
+                        <button class="all-meal-btn" role="button" onClick={() => this.getAllMembers()}>All Members</button>
+                    </div>
                     <div class="admin_row_1">
 
                         <div class="admin_col_1">
@@ -137,11 +173,11 @@ export class AdminHome extends Component {
                                                     <td id="admin_td">{member.memberStatus}</td>
                                                     <td id="admin_td">
                                                         <button type="button" class="approve" onClick={
-                                                        () => {
-                                                            this.approveMember(member.email);
-                                                            window.location.reload(false)
-                                                        }
-                                                    }>Approve</button>
+                                                            () => {
+                                                                this.approveMember(member.email);
+                                                                window.location.reload(false)
+                                                            }
+                                                        }>Approve</button>
                                                     </td>
                                                 </tr>
 
@@ -155,7 +191,7 @@ export class AdminHome extends Component {
                             </div>
                         </div>
                         <div class="admin_col_2">
-                            <h3 class="admin_h3">All Member</h3>
+                            <h3 class="admin_h3">Approved member</h3>
                             <div class="tbl-header">
                                 <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <thead>
@@ -175,16 +211,16 @@ export class AdminHome extends Component {
                                 <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <tbody>
                                         {
-                                            this.state.allMembers.map(member =>
+                                            this.state.approvedMembers.map(member =>
                                                 <tr>
-                                                    <td  id="admin_td" class="table_id">{member.id}</td>
+                                                    <td id="admin_td" class="table_id">{member.id}</td>
                                                     <td id="admin_td">{member.memberName}</td>
                                                     <td id="admin_td">{member.email}</td>
                                                     <td id="admin_td">{member.memberCondition}</td>
                                                     <td id="admin_td">{member.memberStatus}</td>
                                                     <td id="admin_td">
                                                         <button type="button" class="view" onClick={() => this.getMember(member.id)}>View</button>
-                                                        </td>
+                                                    </td>
 
                                                 </tr>
                                             )
@@ -200,6 +236,9 @@ export class AdminHome extends Component {
 
 
                     <h1 class="admin_home_h1">Partner List</h1>
+                    <div class="all-meal-btn-div">
+                        <button class="all-meal-btn" role="button" onClick={() => this.getAllPartners()}>All Partners</button>
+                    </div>
                     <div class="admin_row_1">
 
                         <div class="admin_col_1">
@@ -211,7 +250,6 @@ export class AdminHome extends Component {
                                             <th id="admin_th" class="table_id">Id</th>
                                             <th id="admin_th">Name</th>
                                             <th id="admin_th">Email </th>
-                                            <th id="admin_th">Role </th>
                                             <th id="admin_th">Status </th>
                                             <th id="admin_th">Action</th>
                                         </tr>
@@ -225,13 +263,17 @@ export class AdminHome extends Component {
                                         {
                                             this.state.partners.map(partner =>
                                                 <tr key={partner.id}>
-                                                    <td  id="admin_td" class="table_id">{partner.id}</td>
+                                                    <td id="admin_td" class="table_id">{partner.id}</td>
                                                     <td id="admin_td">{partner.partnerName}</td>
                                                     <td id="admin_td">{partner.email}</td>
-                                                    <td id="admin_td">{partner.partnerRole}</td>
                                                     <td id="admin_td">{partner.partnerStatus}</td>
                                                     <td id="admin_td">
-                                                        <button type="button" class="approve" onClick={() => this.approveMember(partner.email)}>APPROVE</button>
+                                                        <button type="button" class="approve" onClick={
+                                                            () => {
+                                                                this.approveMember(partner.email)
+                                                                window.location.reload(false)
+                                                            }
+                                                        }>APPROVE</button>
                                                     </td>
                                                 </tr>
                                             )
@@ -244,7 +286,7 @@ export class AdminHome extends Component {
                             </div>
                         </div>
                         <div class="admin_col_2">
-                            <h3 class="admin_h3">All partner</h3>
+                            <h3 class="admin_h3">Approved partner</h3>
                             <div class="tbl-header">
                                 <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <thead>
@@ -252,7 +294,6 @@ export class AdminHome extends Component {
                                             <th id="admin_th" class="table_id">Id</th>
                                             <th id="admin_th">Name</th>
                                             <th id="admin_th">Email </th>
-                                            <th id="admin_th">Role </th>
                                             <th id="admin_th">Status </th>
                                             <th id="admin_th">Action</th>
                                         </tr>
@@ -264,16 +305,15 @@ export class AdminHome extends Component {
                                 <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <tbody>
                                         {
-                                            this.state.allPartners.map(partner =>
+                                            this.state.approvedPartners.map(partner =>
                                                 <tr key={partner.id}>
                                                     <td id="admin_td" class="table_id">{partner.id}</td>
                                                     <td id="admin_td">{partner.partnerName}</td>
                                                     <td id="admin_td">{partner.email}</td>
-                                                    <td id="admin_td">{partner.partnerRole}</td>
                                                     <td id="admin_td">{partner.partnerStatus}</td>
-                                                    <td id="admin_td">   
+                                                    <td id="admin_td">
                                                         <button type="button" class="view" onClick={() => this.getPartner(partner.id)}>View</button>
-                                                        </td>
+                                                    </td>
                                                 </tr>
                                             )
                                         }
@@ -286,6 +326,9 @@ export class AdminHome extends Component {
                     </div>
 
                     <h1 class="admin_home_h1">Volunteer List</h1>
+                    <div class="all-meal-btn-div">
+                        <button class="all-meal-btn" role="button" onClick={() => this.getAllVolunteers()}>All Volunteers</button>
+                    </div>
                     <div class="admin_row_1">
 
                         <div class="admin_col_1">
@@ -317,7 +360,7 @@ export class AdminHome extends Component {
                                                     <td id="admin_td">{volunteer.email}</td>
                                                     {
                                                         JSON.stringify(volunteer.volunteerIsCareGiver) === 'true' ?
-                                                            <td  id='isCareGiver'>Yes</td>
+                                                            <td id='isCareGiver'>Yes</td>
                                                             : <td id='isCareGiver'>No</td>
                                                     }
 
@@ -325,7 +368,12 @@ export class AdminHome extends Component {
                                                     <td id="admin_td">{volunteer.volunteerStatus}</td>
 
                                                     <td id="admin_td">
-                                                        <button type="button" class="approve" onClick={() => this.approveMember(volunteer.email)}>APPROVE</button>
+                                                        <button type="button" class="approve" onClick={
+                                                            () => {
+                                                                this.approveMember(volunteer.email)
+                                                                window.location.reload(false)
+                                                            }
+                                                        }>APPROVE</button>
                                                     </td>
                                                 </tr>
                                             )
@@ -338,7 +386,7 @@ export class AdminHome extends Component {
                             </div>
                         </div>
                         <div class="admin_col_2">
-                            <h3 class="admin_h3">All volunteer</h3>
+                            <h3 class="admin_h3">Approved volunteer</h3>
                             <div class="tbl-header">
                                 <table cellpadding="0" cellspacing="0" border="0" className='table'>
                                     <thead>
@@ -359,7 +407,7 @@ export class AdminHome extends Component {
                                     <tbody>
                                         {
 
-                                            this.state.allVolunteers.map(volunteer =>
+                                            this.state.approvedVolunteers.map(volunteer =>
                                                 <tr key={volunteer.id}>
                                                     <td id="admin_td" class="table_id">{volunteer.id}</td>
                                                     <td id="admin_td">{volunteer.volunteerName}</td>
@@ -367,7 +415,7 @@ export class AdminHome extends Component {
                                                     {
                                                         JSON.stringify(volunteer.volunteerIsCareGiver) === 'true' ?
                                                             <td id='isCareGiver'>Yes</td>
-                                                            : <td  id='isCareGiver'>No</td>
+                                                            : <td id='isCareGiver'>No</td>
                                                     }
                                                     <td id="admin_td">{volunteer.volunteerStatus}</td>
 
