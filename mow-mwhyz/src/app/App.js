@@ -29,7 +29,6 @@ import MemberProfile from '../component/profile/MemberProfile';
 import PartnerProfile from '../component/profile/PartnerProfile';
 import VolunteerProfile from '../component/profile/VolunteerProfile';
 import AdminProfile from '../component/profile/AdminProfile';
-import SingleApprovedDish from '../component/admin/SingleApprovedDish';
 import AllDish from '../component/admin/AllList/AllDish';
 import DishStatus from '../component/admin/DishStatus';
 import AllMember from '../component/admin/AllList/AllMember';
@@ -39,7 +38,12 @@ import SingleDish from '../component/admin/SingleView/SingleDish';
 import PartnerDish from '../component/partner/PartnerDish';
 import ApproveDish from '../component/partner/ApproveDish';
 import MealList from '../component/member/MealList';
-
+import ViewDish from '../component/member/ViewDish';
+import OrderList from '../component/Order/OrderList';
+import OrderDetail from '../component/Order/OrderDetail';
+import MOList from '../component/admin/MOList'
+import AllMOD from '../component/admin/AllList/AllMOD';
+import MOD from '../component/admin/MOD';
 
 export const ACCESS_TOKEN = 'accessToken';
 
@@ -106,6 +110,8 @@ export class App extends Component {
 
     }
 
+
+
     return (
 
       <>
@@ -165,7 +171,7 @@ export class App extends Component {
 
 
 
-          {/* View All Meal  */}
+          {/* View All   */}
           <PrivateRoute path="/getAllMeals/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
             component={AllDish}></PrivateRoute>
 
@@ -179,6 +185,11 @@ export class App extends Component {
             component={AllVolunteer}></PrivateRoute>
 
 
+          <PrivateRoute path="/getAllMealOrder" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={AllMOD}></PrivateRoute>
+
+          <PrivateRoute path="/getMOD" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={MOD}></PrivateRoute>
 
           {/* Single Page  */}
           <PrivateRoute path="/getMember/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
@@ -200,9 +211,27 @@ export class App extends Component {
           <PrivateRoute path="/getADish/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
             component={ApproveDish}></PrivateRoute>
 
-            {/* Approved Meal List for Member  */}
-            <PrivateRoute path="/meallist/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser} 
-              component={MealList}></PrivateRoute>
+          {/* Approved Meal List for Member  */}
+          <PrivateRoute path="/meallist/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={MealList}></PrivateRoute>
+
+
+          {/* Order List for user  */}
+          <PrivateRoute path="/orderList" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={OrderList}></PrivateRoute>
+
+
+          {/* Order Detail for user */}
+          <PrivateRoute path="/orderDetail/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={OrderDetail}></PrivateRoute>
+
+          {/* View Dish and Order for member  */}
+          <PrivateRoute path="/viewDish/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={ViewDish}></PrivateRoute>
+
+
+          <PrivateRoute path="/viewOrderList/:type/:id" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+            component={MOList}></PrivateRoute>
 
           <Route path="/about" component={About}></Route>
           <Route path="/contact" component={Contact}></Route>
@@ -210,7 +239,6 @@ export class App extends Component {
 
           <Route path="/thanku" render={(props) => <Thank authenticated={this.state.authenticated} {...props} />}></Route>
 
-         
         </Switch>
 
 

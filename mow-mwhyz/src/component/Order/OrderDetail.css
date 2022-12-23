@@ -1,0 +1,126 @@
+.order-detail-main {
+  background-color: white;
+  width: 70%;
+  margin: 2em auto;
+  padding: 0.2em 0.8em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.order-detail-box {
+  background-color: white;
+  margin: 1em auto;
+  width: 98%;
+  border: 3px solid #555;
+  line-height: 3em;
+}
+.order-detail-title {
+  text-align: center;
+  padding: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-family: garamond;
+}
+
+.order-detail-span {
+  padding: 0 1em;
+  color: rgb(105, 104, 104);
+}
+hr {
+  width: 96%;
+  /* border: 1px solid gainsboro; */
+  height: 1px;
+  background-color: rgb(144, 144, 144);
+  border: none;
+  margin: 1em auto;
+}
+.order-detail {
+  /* background-color: red; */
+  margin: auto 1.2em;
+}
+.detail-row {
+  display: flex;
+  margin: 1em auto;
+}
+.detail-first {
+  width: 20%;
+}
+.detail-img {
+  width: 100%;
+  height: 25vh;
+}
+.detail-second {
+  width: 45%;
+}
+.detail-third {
+  width: 35%;
+}
+.order-detail-o {
+  text-transform: uppercase;
+  color: rgb(219, 135, 83);
+  letter-spacing: 2.5px;
+}
+.order-detail-d {
+  text-transform: uppercase;
+  color: teal;
+  letter-spacing: 2.5px;
+}
+.order-detail-c {
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: slateblue;
+}
+
+.btn_div {
+  margin: 1em auto;
+  width: 10%;
+}
+
+.detail-btn {
+  --b: 3px; /* border thickness */
+  --s: 0.45em; /* size of the corner */
+  --color: #373b44;
+  padding: calc(0.7em + var(--s)) calc(1.5em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  border: 0;
+  text-transform: uppercase;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.detail-btn:hover,
+.detail-btn:focus-visible {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: 0.05em;
+}
+
+.detail-btn:active {
+  background: sandybrown;
+  color: #fff;
+}
+.detail-longtext {
+  display: flex;
+  width: 100%;
+}
+.order-detail-foods {
+  font-style: italic;
+  letter-spacing: 2.5px;
+}
+.order-detail-text {
+  font-size: 1.5em;
+}

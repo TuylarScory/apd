@@ -205,7 +205,7 @@ export function getApprovedVolunteer() {
         method: 'GET'
     });
 }
- 
+
 // Private - Single Volunteer
 export function getSingleVolunteer(volunteerId) {
     if (!localStorage.getItem(ACCESS_TOKEN)) {
@@ -230,7 +230,7 @@ export function getAllDishes(dishId) {
 
     return request({
 
-        url: API_BASE_URL + '/merry/partner/dish/all/' + dishId ,
+        url: API_BASE_URL + '/merry/partner/dish/all/' + dishId,
         method: 'GET',
         data: JSON.stringify(dishId)
     });
@@ -356,3 +356,53 @@ export function getSingleMOD(id) {
         data: JSON.stringify(id)
     });
 }
+
+// Private - Status change for volunteer 
+export function changeStatus(status) {
+    if (!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    return request({
+        url: API_BASE_URL + "/merry/mod/change_status",
+        method: 'PUT',
+        body: JSON.stringify(status)
+    });
+}
+
+// Private - View Single Meal Order Delivery
+export function viewSingleMOD(type, id) {
+    if (!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    console.log(id)
+    return request({
+        url: API_BASE_URL + "/merry/mod/" + type + "/" + id,
+        method: 'GET',
+        data: JSON.stringify(id)
+    });
+}
+
+// Private - View all MOD for admin
+export function viewAllMOD() {
+    if (!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/merry/mod/all",
+        method: 'GET',
+    });
+}
+
+// Private - View MOD status
+export function viewMODStatus(status) {
+    if (!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+
+    return request({
+        url: API_BASE_URL + "/merry/mod/all/" + status,
+        method: 'GET',
+        data: JSON.stringify(status)
+    });
+} 

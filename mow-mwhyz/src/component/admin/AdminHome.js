@@ -133,7 +133,34 @@ export class AdminHome extends Component {
         this.props.history.push(`/getAllVolunteers`)
     }
 
+    viewSingleMOD = (type, id) => {
+        this.props.history.push(`/viewOrderList/${type}/${id}`)
+    }
+
+    singleMod = (id) => {
+        this.props.history.push(`/singleMod/${id}`)
+    }
+
     render() {
+
+        let topBtn = document.getElementById("top-btn");
+
+
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        }
+
+        function toTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
         return (
             <>
                 <div className='admin_main'>
@@ -159,37 +186,45 @@ export class AdminHome extends Component {
                                     </thead>
                                 </table>
                             </div>
+                            {
+                                this.state.members.length > 0 ? (
+                                    <div class="tbl-content">
+                                        <table cellpadding="0" cellspacing="0" border="0" className='table'>
+                                            <tbody>
+                                                {
+                                                    this.state.members.map(member =>
+                                                        <tr key={member.id}>
+                                                            <td id="admin_td" class="table_id">{member.id}</td>
+                                                            <td id="admin_td">{member.memberName}</td>
+                                                            <td id="admin_td">{member.email}</td>
+                                                            <td id="admin_td">{member.memberCondition}</td>
+                                                            <td id="admin_td">{member.memberStatus}</td>
+                                                            <td id="admin_td">
+                                                                <button type="button" class="approve" onClick={
+                                                                    () => {
+                                                                        this.approveMember(member.email);
+                                                                        window.location.reload(false)
+                                                                    }
+                                                                }>Approve</button>
+                                                            </td>
+                                                        </tr>
 
-                            <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
-                                    <tbody>
-                                        {
-                                            this.state.members.map(member =>
-                                                <tr key={member.id}>
-                                                    <td id="admin_td" class="table_id">{member.id}</td>
-                                                    <td id="admin_td">{member.memberName}</td>
-                                                    <td id="admin_td">{member.email}</td>
-                                                    <td id="admin_td">{member.memberCondition}</td>
-                                                    <td id="admin_td">{member.memberStatus}</td>
-                                                    <td id="admin_td">
-                                                        <button type="button" class="approve" onClick={
-                                                            () => {
-                                                                this.approveMember(member.email);
-                                                                window.location.reload(false)
-                                                            }
-                                                        }>Approve</button>
-                                                    </td>
-                                                </tr>
-
-                                            )
-                                        }
+                                                    )
+                                                }
 
 
 
-                                    </tbody>
-                                </table>
-                            </div>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                ) : (
+                                    <h1 class="alert-message">Sorry. There is no Pending Member!!!</h1>
+                                )
+                            }
+
                         </div>
+
+
                         <div class="admin_col_2">
                             <h3 class="admin_h3">Approved member</h3>
                             <div class="tbl-header">
@@ -207,30 +242,38 @@ export class AdminHome extends Component {
                                 </table>
                             </div>
 
-                            <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
-                                    <tbody>
-                                        {
-                                            this.state.approvedMembers.map(member =>
-                                                <tr>
-                                                    <td id="admin_td" class="table_id">{member.id}</td>
-                                                    <td id="admin_td">{member.memberName}</td>
-                                                    <td id="admin_td">{member.email}</td>
-                                                    <td id="admin_td">{member.memberCondition}</td>
-                                                    <td id="admin_td">{member.memberStatus}</td>
-                                                    <td id="admin_td">
-                                                        <button type="button" class="view" onClick={() => this.getMember(member.id)}>View</button>
-                                                    </td>
+                            {
+                                this.state.approvedMembers.length > 0 ? (
+                                    <div class="tbl-content">
+                                        <table cellpadding="0" cellspacing="0" border="0" className='table'>
+                                            <tbody>
+                                                {
+                                                    this.state.approvedMembers.map(member =>
+                                                        <tr>
+                                                            <td id="admin_td" class="table_id">{member.id}</td>
+                                                            <td id="admin_td">{member.memberName}</td>
+                                                            <td id="admin_td">{member.email}</td>
+                                                            <td id="admin_td">{member.memberCondition}</td>
+                                                            <td id="admin_td">{member.memberStatus}</td>
+                                                            <td id="admin_td">
+                                                                <button type="button" class="view" onClick={() => this.getMember(member.id)}>View</button>
+                                                                <button type="button" class="order" onClick={() => this.viewSingleMOD(member.memberROLE, member.id)}>Order</button>
+                                                            </td>
 
-                                                </tr>
-                                            )
-                                        }
+                                                        </tr>
+                                                    )
+                                                }
 
 
 
-                                    </tbody>
-                                </table>
-                            </div>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                ) : (
+                                    <h1 class="alert-message">Sorry. There is no Approved Member!!! </h1>
+                                )
+                            }
+
                         </div>
                     </div>
 
@@ -257,33 +300,38 @@ export class AdminHome extends Component {
                                 </table>
                             </div>
 
-                            <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
-                                    <tbody>
-                                        {
-                                            this.state.partners.map(partner =>
-                                                <tr key={partner.id}>
-                                                    <td id="admin_td" class="table_id">{partner.id}</td>
-                                                    <td id="admin_td">{partner.partnerName}</td>
-                                                    <td id="admin_td">{partner.email}</td>
-                                                    <td id="admin_td">{partner.partnerStatus}</td>
-                                                    <td id="admin_td">
-                                                        <button type="button" class="approve" onClick={
-                                                            () => {
-                                                                this.approveMember(partner.email)
-                                                                window.location.reload(false)
-                                                            }
-                                                        }>APPROVE</button>
-                                                    </td>
-                                                </tr>
-                                            )
-                                        }
+                            {
+                                this.state.partners.length > 0 ? (
+                                    <div class="tbl-content">
+                                        <table cellpadding="0" cellspacing="0" border="0" className='table'>
+                                            <tbody>
+                                                {
+                                                    this.state.partners.map(partner =>
+                                                        <tr key={partner.id}>
+                                                            <td id="admin_td" class="table_id">{partner.id}</td>
+                                                            <td id="admin_td">{partner.partnerName}</td>
+                                                            <td id="admin_td">{partner.email}</td>
+                                                            <td id="admin_td">{partner.partnerStatus}</td>
+                                                            <td id="admin_td">
+                                                                <button type="button" class="approve" onClick={
+                                                                    () => {
+                                                                        this.approveMember(partner.email)
+                                                                        window.location.reload(false)
+                                                                    }
+                                                                }>APPROVE</button>
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                }
 
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                ) : (
+                                    <h1 class="alert-message">Sorry. There is no Pending Parnter!!! </h1>
+                                )
+                            }
 
-
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
                         <div class="admin_col_2">
                             <h3 class="admin_h3">Approved partner</h3>
@@ -301,27 +349,36 @@ export class AdminHome extends Component {
                                 </table>
                             </div>
 
-                            <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
-                                    <tbody>
-                                        {
-                                            this.state.approvedPartners.map(partner =>
-                                                <tr key={partner.id}>
-                                                    <td id="admin_td" class="table_id">{partner.id}</td>
-                                                    <td id="admin_td">{partner.partnerName}</td>
-                                                    <td id="admin_td">{partner.email}</td>
-                                                    <td id="admin_td">{partner.partnerStatus}</td>
-                                                    <td id="admin_td">
-                                                        <button type="button" class="view" onClick={() => this.getPartner(partner.id)}>View</button>
-                                                    </td>
-                                                </tr>
-                                            )
-                                        }
+                            {
+                                this.state.approvedPartners.length > 0 ? (
+                                    <div class="tbl-content">
+                                        <table cellpadding="0" cellspacing="0" border="0" className='table'>
+                                            <tbody>
+                                                {
+                                                    this.state.approvedPartners.map(partner =>
+                                                        <tr key={partner.id}>
+                                                            <td id="admin_td" class="table_id">{partner.id}</td>
+                                                            <td id="admin_td">{partner.partnerName}</td>
+                                                            <td id="admin_td">{partner.email}</td>
+                                                            <td id="admin_td">{partner.partnerStatus}</td>
+                                                            <td id="admin_td">
+                                                                <button type="button" class="view" onClick={() => this.getPartner(partner.id)}>View</button>
+                                                                <button type="button" class="order" onClick={() => this.viewSingleMOD(partner.partnerRole, partner.id)}>Order</button>
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                }
 
 
-                                    </tbody>
-                                </table>
-                            </div>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                ) : (
+                                    <h1 class="alert-message">Sorry. There is no Approved Parnter!!! </h1>
+                                )
+                            }
+
+
                         </div>
                     </div>
 
@@ -349,41 +406,49 @@ export class AdminHome extends Component {
                                 </table>
                             </div>
 
-                            <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
-                                    <tbody>
-                                        {
-                                            this.state.volunteers.map(volunteer =>
-                                                <tr key={volunteer.id}>
-                                                    <td id="admin_td" class="table_id">{volunteer.id}</td>
-                                                    <td id="admin_td">{volunteer.volunteerName}</td>
-                                                    <td id="admin_td">{volunteer.email}</td>
-                                                    {
-                                                        JSON.stringify(volunteer.volunteerIsCareGiver) === 'true' ?
-                                                            <td id='isCareGiver'>Yes</td>
-                                                            : <td id='isCareGiver'>No</td>
-                                                    }
 
-
-                                                    <td id="admin_td">{volunteer.volunteerStatus}</td>
-
-                                                    <td id="admin_td">
-                                                        <button type="button" class="approve" onClick={
-                                                            () => {
-                                                                this.approveMember(volunteer.email)
-                                                                window.location.reload(false)
+                            {
+                                this.state.volunteers.length > 0 ? (
+                                    <div class="tbl-content">
+                                        <table cellpadding="0" cellspacing="0" border="0" className='table'>
+                                            <tbody>
+                                                {
+                                                    this.state.volunteers.map(volunteer =>
+                                                        <tr key={volunteer.id}>
+                                                            <td id="admin_td" class="table_id">{volunteer.id}</td>
+                                                            <td id="admin_td">{volunteer.volunteerName}</td>
+                                                            <td id="admin_td">{volunteer.email}</td>
+                                                            {
+                                                                JSON.stringify(volunteer.volunteerIsCareGiver) === 'true' ?
+                                                                    <td id='isCareGiver'>Yes</td>
+                                                                    : <td id='isCareGiver'>No</td>
                                                             }
-                                                        }>APPROVE</button>
-                                                    </td>
-                                                </tr>
-                                            )
-                                        }
+
+
+                                                            <td id="admin_td">{volunteer.volunteerStatus}</td>
+
+                                                            <td id="admin_td">
+                                                                <button type="button" class="approve" onClick={
+                                                                    () => {
+                                                                        this.approveMember(volunteer.email)
+                                                                        window.location.reload(false)
+                                                                    }
+                                                                }>APPROVE</button>
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                }
 
 
 
-                                    </tbody>
-                                </table>
-                            </div>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                ) : (
+                                    <h1 class="alert-message">Sorry. There is no Pending Volunteer!!! </h1>
+                                )
+                            }
+
                         </div>
                         <div class="admin_col_2">
                             <h3 class="admin_h3">Approved volunteer</h3>
@@ -401,38 +466,48 @@ export class AdminHome extends Component {
                                     </thead>
                                 </table>
                             </div>
+                            {
+                                this.state.approvedVolunteers.length > 0 ? (
+                                    <div class="tbl-content">
+                                        <table cellpadding="0" cellspacing="0" border="0" className='table'>
+                                            <tbody>
+                                                {
 
-                            <div class="tbl-content">
-                                <table cellpadding="0" cellspacing="0" border="0" className='table'>
-                                    <tbody>
-                                        {
+                                                    this.state.approvedVolunteers.map(volunteer =>
+                                                        <tr key={volunteer.id}>
+                                                            <td id="admin_td" class="table_id">{volunteer.id}</td>
+                                                            <td id="admin_td">{volunteer.volunteerName}</td>
+                                                            <td id="admin_td">{volunteer.email}</td>
+                                                            {
+                                                                JSON.stringify(volunteer.volunteerIsCareGiver) === 'true' ?
+                                                                    <td id='isCareGiver'>Yes</td>
+                                                                    : <td id='isCareGiver'>No</td>
+                                                            }
+                                                            <td id="admin_td">{volunteer.volunteerStatus}</td>
 
-                                            this.state.approvedVolunteers.map(volunteer =>
-                                                <tr key={volunteer.id}>
-                                                    <td id="admin_td" class="table_id">{volunteer.id}</td>
-                                                    <td id="admin_td">{volunteer.volunteerName}</td>
-                                                    <td id="admin_td">{volunteer.email}</td>
-                                                    {
-                                                        JSON.stringify(volunteer.volunteerIsCareGiver) === 'true' ?
-                                                            <td id='isCareGiver'>Yes</td>
-                                                            : <td id='isCareGiver'>No</td>
-                                                    }
-                                                    <td id="admin_td">{volunteer.volunteerStatus}</td>
-
-                                                    <td id="admin_td">
-                                                        <button type="button" class="view" onClick={() => this.getVolunteer(volunteer.id)}>View</button>
-                                                    </td>
-                                                </tr>
-                                            )
-                                        }
+                                                            <td id="admin_td">
+                                                                <button type="button" class="view" onClick={() => this.getVolunteer(volunteer.id)}>View</button>
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                }
 
 
-                                    </tbody>
-                                </table>
-                            </div>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                ) : (
+                                    <h1 class="alert-message">Sorry. There is no Approved Volunteer!!! </h1>
+                                )
+                            }
+
                         </div>
                     </div>
+                    <div>
+                        <button onClick={toTop} id="top-btn"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></button>
+                    </div>
                 </div>
+
             </>
         )
     }

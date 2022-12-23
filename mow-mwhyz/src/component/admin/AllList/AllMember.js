@@ -34,6 +34,24 @@ export class AllMember extends Component {
     }
 
     render() {
+        let topBtn = document.getElementById("top-btn");
+
+
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        }
+
+        function toTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
         return (
             <>
                 <div class="user-all-main">
@@ -69,6 +87,9 @@ export class AllMember extends Component {
                     </table>
                     <div className='user-btn-div'>
                         <button class="user-back-btn" role="button" onClick={this.goBack}>Back</button>
+                    </div>
+                    <div>
+                        <button onClick={toTop} id="top-btn"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></button>
                     </div>
                 </div>
 

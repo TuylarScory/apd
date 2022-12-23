@@ -54,10 +54,10 @@ export class AppHeader extends Component {
                                         <div className="nav-left">
                                             <ul>
                                                 <li>
-                                                    <NavLink to="/add_admin" >Add admin</NavLink>
+                                                    <NavLink to="/add_admin" >Add_Admin</NavLink>
                                                 </li>
                                                 <li>
-                                                    <NavLink to="/view_dish" ></NavLink>
+                                                    <NavLink to="/getMOD" >Order_List</NavLink>
                                                 </li>
                                                 <li>
                                                     <NavLink to="/admin" >Home</NavLink>
@@ -89,14 +89,18 @@ export class AppHeader extends Component {
                                         <div className="nav-left">
                                             <ul>
                                                 <li>
-                                                    <NavLink to="/add_dish" >Add Dish</NavLink>
+                                                    <NavLink to="/add_dish" >Add_Meal</NavLink>
                                                 </li>
                                                 <li>
                                                     <NavLink to="/getApproveDish" >Meals</NavLink>
                                                 </li>
                                                 <li>
+                                                    <NavLink to="/orderList" >History</NavLink>
+                                                </li>
+                                                <li>
                                                     <NavLink to="/partner" >Home</NavLink>
                                                 </li>
+                                                
                                             </ul>
                                         </div>
                                         <div className="nav-middle" >
@@ -124,10 +128,7 @@ export class AppHeader extends Component {
                                         <div className="nav-left">
                                             <ul>
                                                 <li>
-                                                    <NavLink to="/" >Member</NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink to="/" >Shops</NavLink>
+                                                    <NavLink to="/orderList" >History</NavLink>
                                                 </li>
                                                 <li>
                                                     <NavLink to="/member" >Home</NavLink>
@@ -159,13 +160,10 @@ export class AppHeader extends Component {
                                         <div className="nav-left">
                                             <ul>
                                                 <li>
-                                                    <NavLink to="/" >Volunteer</NavLink>
+                                                    <NavLink to="/orderList" >Order_List</NavLink>
                                                 </li>
                                                 <li>
-                                                    <NavLink to="/" >Volunteer</NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink to="/volunteer" >Volunteer Home</NavLink>
+                                                    <NavLink to="/volunteer" >Home</NavLink>
                                                 </li>
                                             </ul>
                                         </div>
@@ -194,9 +192,9 @@ export class AppHeader extends Component {
                                 <nav >
                                     <div className="nav-left">
                                         <ul>
-                                            <li>
+                                            {/* <li>
                                                 <NavLink to="/shop" >Shops</NavLink>
-                                            </li>
+                                            </li> */}
                                             <li>
                                                 <NavLink to="/contact">Contact</NavLink>
                                             </li>

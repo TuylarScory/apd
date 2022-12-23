@@ -15,7 +15,7 @@ export class PartnerDish extends Component {
     }
 
     componentDidMount() {
-       
+
 
         getApprovedDishes(this.state.id)
 
@@ -27,7 +27,7 @@ export class PartnerDish extends Component {
                 })
             })
 
-        
+
 
 
     }
@@ -39,40 +39,62 @@ export class PartnerDish extends Component {
         this.props.history.push(`/getADish/${id}`)
     }
 
-  render() {
-    return (
-        <>
-        <div class="meal-list-body">
-                <h2 class="meal-list-title">Meal List</h2>
-                <div class="meal-list">
-                    {
-                        this.state.approvedMenu.map(dish =>
-                            <div class="meal-list-card" key={dish.dishId}>
-                                <h3 class="meal-list-card-title">{dish.dishName}</h3>
-                                <img src={"http://localhost:8080/merry/image/" + dish.profileImage.id}
-                                    class="meal-list-img" alt="" />
-                                <div class="meal-list-sugg">
-                                    <h4><i class="fa fa-cutlery" aria-hidden="true" id="meal-food"></i></h4>
-                                    <h4 class="meal-list-card-suggestion">{dish.suggestion}</h4>
+    render() {
+
+        let topBtn = document.getElementById("top-btn");
+
+
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        }
+
+        function toTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        return (
+            <>
+                <div class="meal-list-body">
+                    <h2 class="meal-list-title">Meal List</h2>
+                    <div class="meal-list">
+                        {
+                            this.state.approvedMenu.map(dish =>
+                                <div class="meal-list-card" key={dish.dishId}>
+                                    <h3 class="meal-list-card-title">{dish.dishName}</h3>
+                                    <img src={"http://localhost:8080/merry/image/" + dish.profileImage.id}
+                                        class="meal-list-img" alt="" />
+                                    <div class="meal-list-sugg">
+                                        <h4><i class="fa fa-cutlery" aria-hidden="true" id="meal-food"></i></h4>
+                                        <h4 class="meal-list-card-suggestion">{dish.suggestion}</h4>
+                                    </div>
+                                    <div class="meal-list-card-arrow">
+                                        <i aria-hidden="true" class="fa fa-long-arrow-right fa-2x" id="arrow-icon"></i>
+                                        <button class="meal-card-btn" onClick={() => this.getDish(dish.dishId)}>View Details</button>
+                                    </div>
                                 </div>
-                                <div class="meal-list-card-arrow">
-                                    <i aria-hidden="true" class="fa fa-long-arrow-right fa-2x" id="arrow-icon"></i>
-                                    <button class="meal-card-btn" onClick={() => this.getDish(dish.dishId)}>View Details</button>
-                                </div>
-                            </div>
-                        )
-                    }
+                            )
+                        }
 
 
+                    </div>
+                    <div class="meal-back-div">
+                        <button class="meal-back-btn" onClick={this.goBack}><i class="fa fa-long-arrow-left fa-1x" aria-hidden="true"></i> &nbsp;Back</button>
+                    </div>
+                    <div>
+                        <button onClick={toTop} id="top-btn"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></button>
+                    </div>
                 </div>
-                <div class="meal-back-div">
-                    <button class="meal-back-btn" onClick={this.goBack}><i class="fa fa-long-arrow-left fa-1x" aria-hidden="true"></i> &nbsp;Back</button>
-                </div>
-            </div>
 
-    </>
-    )
-  }
+            </>
+        )
+    }
 }
 
 export default PartnerDish

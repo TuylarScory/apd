@@ -11,9 +11,8 @@
   /* background: gray; */
   padding: 5px;
   overflow: hidden;
-  border: 2px solid #FF7F50;
+  border: 2px solid #ff7f50;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  
 }
 .button-box {
   width: 400px;
@@ -29,9 +28,8 @@
   border: 0;
   outline: none;
   position: relative;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   letter-spacing: 2px;
-  
 }
 #btn {
   top: 0;
@@ -39,10 +37,9 @@
   position: absolute;
   width: 140px;
   height: 100%;
-  background: linear-gradient(to bottom, #FFCB2F 0%, #FD8666 100%);
+  background: linear-gradient(to bottom, #ffcb2f 0%, #fd8666 100%);
   border-radius: 30px;
   transition: 0.5s;
-  
 }
 
 .image_box {
@@ -76,21 +73,20 @@
   cursor: pointer;
   display: block;
   margin: auto;
-  background: linear-gradient(to bottom, #F7A035 0%, #FD8666 100%);
+  background: linear-gradient(to bottom, #f7a035 0%, #fd8666 100%);
   border: 0;
   outline: none;
   border-radius: 30px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   color: white;
   font-weight: bold;
   letter-spacing: 5px;
   font-size: 1em;
-
 }
 .check-box {
   margin: 30px 10px 30px 0;
 }
-span {
+.register-span {
   color: #777;
   font-size: 12px;
   bottom: 68px;
@@ -118,7 +114,7 @@ h1 {
   border: 1px solid transparent;
   width: 30%;
   padding: 8px 15px;
-  background-color: #FFE9A3;
+  background-color: #ffe9a3;
   border: 1px solid rgba(29, 29, 29, 0.4);
   border-radius: 100px;
   color: black;
@@ -135,12 +131,11 @@ h1 {
   background-size: cover;
 }
 
-
 .input_field i {
   margin-right: 10px;
 }
 .submit1 {
-  background-color: #FFE9A3;
+  background-color: #ffe9a3;
   border: 1px solid rgba(29, 29, 29, 0.4);
   border-radius: 100px;
   color: #0b0705;
@@ -167,7 +162,6 @@ input::placeholder {
   color: black;
   letter-spacing: 1px;
 }
-
 
 .registerform {
   margin: 0 35% 0 35%;
@@ -225,7 +219,6 @@ input::placeholder {
   animation: expand 0.8s 0.6s ease-out forwards;
   opacity: 0;
   overflow: auto;
-  
 }
 .form_wrapper h2 {
   font-size: 1.5em;
@@ -267,7 +260,7 @@ input::placeholder {
   margin-bottom: 20px;
   animation: bounce 0.6s ease-out;
 }
-.form_wrapper .input_field > span {
+.form_wrapper .input_field > .register-span {
   position: absolute;
   left: 0;
   top: 0;
@@ -277,12 +270,12 @@ input::placeholder {
   text-align: center;
   width: 30px;
 }
-.form_wrapper .input_field > span > i {
+.form_wrapper .input_field > .register-span > i {
   padding-top: 10px;
   padding-left: 5px;
 }
 
-.form_wrapper .textarea_field > span > i {
+.form_wrapper .textarea_field > .register-span > i {
   padding-top: 10px;
   padding-left: 5px;
 }
@@ -298,7 +291,7 @@ input::placeholder {
   box-sizing: border-box;
   outline: none;
   transition: all 0.3s ease-in-out;
-  background-color: #FFE9A3;
+  background-color: #ffe9a3;
   font-weight: bold;
 }
 .form_wrapper input[type="text"]:hover,
@@ -306,7 +299,6 @@ input::placeholder {
 .form_wrapper input[type="password"]:hover,
 .form_wrapper input[type="tel"]:hover {
   background: #fafafa;
-  
 }
 .form_wrapper input[type="text"]:focus,
 .form_wrapper input[type="email"]:focus,

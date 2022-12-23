@@ -166,16 +166,16 @@ class Admin extends Component {
                             <div class="admin_row clearfix">
                                 <div class="">
                                     <form onSubmit={this.handleSubmit}>
-                                        <div class="admin_input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                        <div class="admin_input_field"> <span class="admin-span"><i aria-hidden="true" class="fa fa-user"></i></span>
                                             <input type="text" name="adminName" placeholder="Name" maxLength="64" value={this.state.adminName} onChange={this.handleInputChange} required></input>
                                         </div>
 
 
-                                        <div class="admin_input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                                        <div class="admin_input_field"> <span class="admin-span"><i aria-hidden="true" class="fa fa-envelope"></i></span>
                                             <input type="email" name="email" placeholder="Email" maxLength="64" value={this.state.email} onChange={this.handleInputChange} required></input>
                                         </div>
 
-                                        <div class="admin_input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                                        <div class="admin_input_field"> <span class="admin-span"><i aria-hidden="true" class="fa fa-lock"></i></span>
                                             <input type="password" name="adminPassword" placeholder="Password" value={this.state.adminPassword} onChange={this.handleInputChange} minLength="8" required></input>
                                         </div>
 

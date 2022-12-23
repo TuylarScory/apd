@@ -75,6 +75,7 @@ export class MemberHome extends Component {
 
 
   render() {
+    
     let topBtn = document.getElementById("top-btn");
 
 

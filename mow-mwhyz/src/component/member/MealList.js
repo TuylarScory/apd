@@ -33,8 +33,27 @@ export class MealList extends Component {
     goBack = () => {
         this.props.history.push(`/member`)
     }
- 
+
     render() {
+
+        let topBtn = document.getElementById("top-btn");
+
+
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        }
+
+        function toTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
         return (
             <div class="meal-list-body">
                 <h2 class="meal-list-title">Meal List</h2>
@@ -55,12 +74,15 @@ export class MealList extends Component {
                                 </div>
                             </div>
                         )
-                    }
+                    } 
 
 
                 </div>
                 <div class="meal-back-div">
                     <button class="meal-back-btn" onClick={this.goBack}><i class="fa fa-long-arrow-left fa-1x" aria-hidden="true"></i> &nbsp;Back</button>
+                </div>
+                <div>
+                    <button onClick={toTop} id="top-btn"><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></button>
                 </div>
             </div>
         )

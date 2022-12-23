@@ -410,19 +410,19 @@ class Signup extends Component {
         <div className='input-group' id='member'>
           <div class="form_wrapper" >
             <div class="form_container">
-              
+
               <div class="row clearfix">
                 <div class="">
                   <form onSubmit={this.handleSubmit2}>
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-user"></i></span>
                       <input type="text" name="memberName" placeholder="Name" maxLength="64" value={this.state.memberName} onChange={this.handleInputChange2} required></input>
                     </div>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-phone"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-phone"></i></span>
                       <input type="tel" name="memberPhoneNo" placeholder="Phone Number" maxLength="64" value={this.state.memberPhoneNo} onChange={this.handleInputChange2} required></input>
                     </div>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-calendar"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-calendar"></i></span>
                       <input type="text" name="memberAge" placeholder="Age" value={this.state.memberAge} onChange={this.handleInputChange2} required></input>
                     </div>
 
@@ -431,15 +431,15 @@ class Signup extends Component {
                       <p id="lat2" name="memberLocationByLatitude" value={this.state.memberLocationByLatitude} onChange={this.handleInputChange2}>Latitude</p>
                       <p id="log2" name="memberLocationByLongitude" value={this.state.memberLocationByLongitude} onChange={this.handleInputChange2}>Longtitude</p>
                     </div>
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-map"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-map"></i></span>
                       <input type="text" name="memberLocationByAddress" placeholder="Address" value={this.state.memberLocationByAddress} onChange={this.handleInputChange2} required></input>
                     </div>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-envelope"></i></span>
                       <input type="email" name="email" placeholder="Email" maxLength="64" value={this.state.email} onChange={this.handleInputChange2} required></input>
                     </div>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-lock"></i></span>
                       <input type="password" name="memberPassword" placeholder="Password" value={this.state.memberPassword} onChange={this.handleInputChange2} minlength="8" required></input>
                     </div>
 
@@ -448,7 +448,7 @@ class Signup extends Component {
                       <label for="" id='radio-label'>Member Condition</label>
                       <div class="input_field radio_option">
 
-                        <input type="radio" id="disability" name="memberCondition" value="disability" onChange={this.handleInputChange2} required/> Disability
+                        <input type="radio" id="disability" name="memberCondition" value="disability" onChange={this.handleInputChange2} required /> Disability
                         <input type="radio" id="illness" name="memberCondition" value="illness" onChange={this.handleInputChange2} required /> Illness
                       </div>
                     </div>
@@ -456,10 +456,10 @@ class Signup extends Component {
 
 
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-warning"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-warning"></i></span>
                       <input type="text" id="conditionDescription" placeholder='Condition Description' name="memberCondDescription" required
                         value={this.state.memberCondDescription} onChange={this.handleInputChange2}></input>
-          
+
                     </div>
 
                     <input className="button" type="submit" onClick={this.checkButton} value="Register" />
@@ -474,16 +474,16 @@ class Signup extends Component {
         <div className='input-group' id='partner'>
           <div class="form_wrapper" >
             <div class="form_container">
-            
+
               <div class="row clearfix">
                 <div class="">
                   <form onSubmit={this.handleSubmit}>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-user"></i></span>
                       <input type="text" name="partnerName" placeholder="Name" maxLength="64" value={this.state.partnerName} onChange={this.handleInputChange} required></input>
                     </div>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-phone"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-phone"></i></span>
                       <input type="tel" name="partnerPhoneNo" placeholder="Phone Number" maxLength="64" value={this.state.partnerPhoneNo} onChange={this.handleInputChange} required></input>
                     </div>
 
@@ -493,15 +493,15 @@ class Signup extends Component {
                       <p id="log" name="partnerLocationByLongitude" value={this.state.partnerLocationByLongitude} onChange={this.handleInputChange}>Longtitude</p>
                     </div>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-map"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-map"></i></span>
                       <input type="text" name="partnerLocationByAddress" placeholder="Address" value={this.state.partnerLocationByAddress} onChange={this.handleInputChange} required></input>
                     </div>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-envelope"></i></span>
                       <input type="email" name="email" placeholder="Email" maxLength="64" value={this.state.email} onChange={this.handleInputChange} required></input>
                     </div>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-lock"></i></span>
                       <input type="password" name="partnerPassword" placeholder="Password" minlength="8" value={this.state.partnerPassword} onChange={this.handleInputChange} required></input>
                     </div>
 
@@ -516,19 +516,19 @@ class Signup extends Component {
         <div className='input-group' id='voluntee'>
           <div class="form_wrapper" >
             <div class="form_container">
-              
+
               <div class="row clearfix">
                 <div class="">
                   <form onSubmit={this.handleSubmit1}>
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-user"></i></span>
                       <input type="text" name="volunteerName" placeholder="Name" maxLength="64" value={this.state.volunteerName} onChange={this.handleInputChange1} required></input>
                     </div>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-phone"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-phone"></i></span>
                       <input type="tel" name="volunteerPhoneNo" placeholder="Phone Number" maxLength="64" value={this.state.volunteerPhoneNo} onChange={this.handleInputChange1} required></input>
                     </div>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-calendar"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-calendar"></i></span>
                       <input type="text" name="volunteerAge" placeholder="Age" value={this.state.volunteerAge} onChange={this.handleInputChange1} required></input>
                     </div>
 
@@ -537,15 +537,15 @@ class Signup extends Component {
                       <p id="lat1" name="volunteerLocationByLatitude" value={this.state.volunteerLocationByLatitude} onChange={this.handleInputChange1}>Latitude</p>
                       <p id="log1" name="volunteerLocationByLongitude" value={this.state.volunteerLocationByLongitude} onChange={this.handleInputChange1}>Longtitude</p>
                     </div>
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-map"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-map"></i></span>
                       <input type="text" name="volunteerLocationByAddress" placeholder="Address" value={this.state.volunteerLocationByAddress} onChange={this.handleInputChange1} required></input>
                     </div>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-envelope"></i></span>
                       <input type="email" name="email" placeholder="Email" maxLength="64" value={this.state.email} onChange={this.handleInputChange1} required></input>
                     </div>
 
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                    <div class="input_field"> <span class="register-span"><i aria-hidden="true" class="fa fa-lock"></i></span>
                       <input type="password" name="volunteerPassword" placeholder="Password" minlength="8" value={this.state.volunteerPassword} onChange={this.handleInputChange1} required></input>
                     </div>
 
@@ -554,7 +554,7 @@ class Signup extends Component {
                     <div class="input_field radio_option">
 
                       <input type="radio" name="volunteerIsCareGiver" value="true" onChange={this.handleInputChange1} /> Yes
-                      <input type="radio"  name="volunteerIsCareGiver" value="false" onChange={this.handleInputChange1} /> No
+                      <input type="radio" name="volunteerIsCareGiver" value="false" onChange={this.handleInputChange1} /> No
                     </div>
 
                     <input class="button" type="submit" value="Register" />

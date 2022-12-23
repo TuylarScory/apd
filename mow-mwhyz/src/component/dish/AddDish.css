@@ -9,7 +9,7 @@
   display: flex;
   width: 55%;
   margin: 1em auto;
-  background-color: #ea6a2e;
+  background-color: #FEEAE3;
 }
 .dish-left {
   width: 46%;
@@ -17,6 +17,7 @@
   height: auto;
   margin-right: 1em;
   margin-left: 2em;
+  line-height: 3em;
 }
 #dish_img_output {
   width: 100%;
@@ -36,7 +37,7 @@
 .dish-img-label {
   position: relative;
   top: 30%;
-  background-color: #feeae3;
+  background-color: #EA6A2E;
   border: 1px solid #feeae3;
   border-radius: 50%;
   padding: 5px 10px;

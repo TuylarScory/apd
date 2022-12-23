@@ -101,34 +101,40 @@ export class DishStatus extends Component {
                                 </thead>
                             </table>
                         </div>
+                        {
+                            this.state.pendingMenu.length > 0 ? (
+                                <div class="tbl-content">
+                                    <table cellpadding="0" cellspacing="0" border="0" className='table'>
+                                        <tbody>
+                                            {
+                                                this.state.pendingMenu.map(dish =>
+                                                    <tr key={dish.dishId}>
+                                                        <td id="admin_td">{dish.dishName}</td>
+                                                        <td id="admin_td">{dish.suggestion}</td>
+                                                        <td id="admin_td">{dish.dishStatus}</td>
+                                                        <td id="admin_td">
+                                                            <button type="button" class="approve" onClick={
+                                                                () => {
+                                                                    this.approveDish(dish.dishId);
+                                                                    window.location.reload(false)
+                                                                }
+                                                            }>Approve</button>
+                                                        </td>
+                                                    </tr>
 
-                        <div class="tbl-content">
-                            <table cellpadding="0" cellspacing="0" border="0" className='table'>
-                                <tbody>
-                                    {
-                                        this.state.pendingMenu.map(dish =>
-                                            <tr key={dish.dishId}>
-                                                <td id="admin_td">{dish.dishName}</td>
-                                                <td id="admin_td">{dish.suggestion}</td>
-                                                <td id="admin_td">{dish.dishStatus}</td>
-                                                <td id="admin_td">
-                                                    <button type="button" class="approve" onClick={
-                                                        () => {
-                                                            this.approveDish(dish.dishId);
-                                                            window.location.reload(false)
-                                                        }
-                                                    }>Approve</button>
-                                                </td>
-                                            </tr>
-
-                                        )
-                                    }
+                                                )
+                                            }
 
 
 
-                                </tbody>
-                            </table>
-                        </div>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            ) : (
+                                <h1 class="alert-message">Sorry. There is no Pending Meals!!! </h1>
+                            )
+                        }
+
                     </div>
                     <div class="admin_col_2">
                         <h3 class="admin_h3">Approved Meal</h3>
@@ -144,30 +150,36 @@ export class DishStatus extends Component {
                                 </thead>
                             </table>
                         </div>
+                        {
+                            this.state.approvedMenu.length > 0 ? (
+                                <div class="tbl-content">
+                                    <table cellpadding="0" cellspacing="0" border="0" className='table'>
+                                        <tbody>
+                                            {
+                                                this.state.approvedMenu.map(dish =>
+                                                    <tr key={dish.dishId}>
+                                                        <td id="admin_td">{dish.dishName}</td>
+                                                        <td id="admin_td">{dish.suggestion}</td>
+                                                        <td id="admin_td">{dish.dishStatus}</td>
+                                                        <td id="admin_td">
+                                                            <button type="button" class="view" onClick={() => this.getDish(dish.dishId)}>View</button>
+                                                        </td>
 
-                        <div class="tbl-content">
-                            <table cellpadding="0" cellspacing="0" border="0" className='table'>
-                                <tbody>
-                                    {
-                                        this.state.approvedMenu.map(dish =>
-                                            <tr key={dish.dishId}>
-                                                <td id="admin_td">{dish.dishName}</td>
-                                                <td id="admin_td">{dish.suggestion}</td>
-                                                <td id="admin_td">{dish.dishStatus}</td>
-                                                <td id="admin_td">
-                                                    <button type="button" class="view" onClick={() => this.getDish(dish.dishId)}>View</button>
-                                                </td>
-
-                                            </tr>
-                                        )
-                                    }
+                                                    </tr>
+                                                )
+                                            }
 
 
 
-                                </tbody>
-                            </table>
+                                        </tbody>
+                                    </table>
 
-                        </div>
+                                </div>
+                            ) : (
+                                <h1 class="alert-message">Sorry. There is no Approved Meals!!! </h1>
+                            )
+                        }
+
                     </div>
                 </div>
 
