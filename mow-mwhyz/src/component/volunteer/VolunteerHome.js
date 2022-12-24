@@ -3,6 +3,8 @@ import foodDelivery from '../../img/sl-food-delivery.jpg';
 import homeDeli from '../../img/homedeli.jpg'
 import msHelen from '../../img/mshelen.jpg'
 import forJenny from '../../img/forjenny_3.jpg'
+import mrBelly from '../../img/mrbilly.jpg'
+import volcare from '../../img/volcare.jpeg'
 import './VolunteerHome.css'
 
 export class VolunteerHome extends Component {
@@ -54,17 +56,17 @@ export class VolunteerHome extends Component {
               <p class="wishing">We are so happy with this service. Old age people like us need more care and also we can't cook for ourselves. Also our sons and daughter are at the aborad and far away from our home so, they can't always take care of us. Meals on Wheels really helpful and we wish you all have better future</p>
             </div>
             <div class="wishfromempic">
-              <img src={msHelen} />
+              <img src={mrBelly} />
             </div>
             <div class="wishing1">
-              <p class="wishname">Ms Helen</p>
-              <p class="wishing">I'm really glad that you guys are really kind and help me alot. As a senior adult like me need more campaign like this</p>
+              <p class="wishname">Mr Billy</p>
+              <p class="wishing">I'm really happy with this service. This is really helpful and need for the senior like us</p>
             </div>
             <div class="wishfromempic">
-              <img src={forJenny} />
+              <img src={volcare} />
             </div>
             <div class="wishing1">
-              <p class="wishname">Mr and Ms Jones</p>
+              <p class="wishname">Ms Tiffany</p>
               <p class="wishing">I'm really glad that you guys are really kind and help me alot. As a senior adult like me need more campaign like this</p>
             </div>
           </div>

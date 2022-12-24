@@ -1,0 +1,110 @@
+
+
+.partner-home-first {
+  width: 100%;
+  height: 95vh;
+  background: linear-gradient(
+      rgba(128, 128, 128, 0.48),
+      rgba(116, 115, 115, 0.48)
+    ),
+    url("D:/User_Program/REACT/mow-mwhyz/src/img/grandma1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.phome-first-img {
+  width: 100%;
+  height: 95vh;
+}
+.phome-first-text-span {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.phome-first-text {
+  font-size: 2em;
+  position: relative;
+  top: 15%;
+  width: 50%;
+}
+.phome-first-text1 {
+  font-size: 2em;
+  position: relative;
+  top: 20%;
+  left: 12%;
+  width: 50%;
+}
+.phome-first-box {
+  background-color: white;
+  width: 10%;
+  padding: 2.5em;
+  line-height: 2em;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+  top: 22%;
+  left: 80%;
+}
+.phome-first-img-coll {
+  position: relative;
+  top: 38%;
+  width: 70%;
+  left: 22%;
+}
+.phome-first-img-coll1 {
+  position: relative;
+  top: -30%;
+  width: 60%;
+  left: 39.5%;
+}
+.phome-first-img-coll2 {
+  position: relative;
+  top: -75%;
+  width: 30%;
+  left: 57.5%;
+}
+.phome-first-img1 {
+  width: 25%;
+  height: 53vh;
+}
+.phome-first-img2 {
+  width: 30%;
+  height: 53vh;
+}
+.phome-first-img3 {
+  width: 60%;
+  height: 53vh;
+}
+.partner-home-main {
+  margin-top: 15em;
+}
+.partner-home-main-title {
+  text-align: center;
+  color: coral;
+  padding: 2em;
+}
+.phome-main-row {
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+.phome-main-row1 {
+  display: flex;
+  width: 90%;
+  margin: 3em auto;
+}
+
+.phome-main-left,
+.phome-main-right {
+  display: flex;
+  width: 50%;
+}
+.phome-main-img-div {
+  width: 40%;
+}
+.phome-main-info-div {
+  width: 60%;
+  padding: 2em 3em;
+  line-height: 2em;
+}
+.phome-main-img {
+  width: 100%;
+  height: 30vh;
+}

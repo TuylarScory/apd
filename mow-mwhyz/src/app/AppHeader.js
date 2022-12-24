@@ -95,12 +95,12 @@ export class AppHeader extends Component {
                                                     <NavLink to="/getApproveDish" >Meals</NavLink>
                                                 </li>
                                                 <li>
-                                                    <NavLink to="/orderList" >History</NavLink>
+                                                    <NavLink to="/orderList" >Order_List</NavLink>
                                                 </li>
                                                 <li>
                                                     <NavLink to="/partner" >Home</NavLink>
                                                 </li>
-                                                
+
                                             </ul>
                                         </div>
                                         <div className="nav-middle" >
@@ -128,7 +128,7 @@ export class AppHeader extends Component {
                                         <div className="nav-left">
                                             <ul>
                                                 <li>
-                                                    <NavLink to="/orderList" >History</NavLink>
+                                                    <NavLink to="/orderList" title="Order_History">History</NavLink>
                                                 </li>
                                                 <li>
                                                     <NavLink to="/member" >Home</NavLink>
