@@ -241,7 +241,7 @@ export class App extends Component {
 
         </Switch>
 
-
+ 
         <AppFooter authenticated={this.state.authenticated} />
       </>
     )
