@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import foodDelivery from '../../img/sl-food-delivery.jpg';
 import homeDeli from '../../img/homedeli.jpg'
 import msHelen from '../../img/mshelen.jpg'
-import forJenny from '../../img/forjenny_3.jpg'
+import froJenny from '../../img/forjenny_3.jpg'
 import mrBelly from '../../img/mrbilly.jpg'
 import volcare from '../../img/volcare.jpeg'
 import './VolunteerHome.css'
@@ -37,37 +37,51 @@ export class VolunteerHome extends Component {
           </div>
 
 
-          <div class="wishfromem">
-            <div class="wishfromemtitle">
-              <p class="wftitle">Wish From Member</p>
+          <div class="volunteer-home-main">
+            <h2 class="partner-home-main-title">Wish From Member</h2>
+            <div class="phome-main-row">
+              <div class="phome-main-left">
+                <div class="phome-main-img-div">
+                  <img src={msHelen} class="phome-main-img" alt="" />
+                </div>
+                <div class="phome-main-info-div">
+                  <h3>Ms Helen</h3>
+                  <p>I'm really glad that you guys are really kind and help me alot. As a senior adult like me need
+                    more campaign like this</p>
+                </div>
+              </div>
+              <div class="phome-main-right">
+                <div class="phome-main-img-div">
+                  <img src={froJenny} class="phome-main-img" alt="" />
+                </div>
+                <div class="phome-main-info-div">
+                  <h3>Mr and Ms Jones</h3>
+                  <p>We are so happy with this service. Old age people like us need more care and also we can't cook
+                    for ourselves. Meals on Wheels really helpful and we wish you all have better
+                    future</p>
+                </div>
+              </div>
             </div>
-            <div class="wishfromempic">
-              <img src={msHelen} />
-            </div>
-            <div class="wishing1">
-              <p class="wishname">Ms Helen</p>
-              <p class="wishing">I'm really glad that you guys are really kind and help me alot. As a senior adult like me need more campaign like this</p>
-            </div>
-            <div class="wishfromempic">
-              <img src={forJenny} />
-            </div>
-            <div class="wishing1">
-              <p class="wishname">Mr and Ms Jones</p>
-              <p class="wishing">We are so happy with this service. Old age people like us need more care and also we can't cook for ourselves. Also our sons and daughter are at the aborad and far away from our home so, they can't always take care of us. Meals on Wheels really helpful and we wish you all have better future</p>
-            </div>
-            <div class="wishfromempic">
-              <img src={mrBelly} />
-            </div>
-            <div class="wishing1">
-              <p class="wishname">Mr Billy</p>
-              <p class="wishing">I'm really happy with this service. This is really helpful and need for the senior like us</p>
-            </div>
-            <div class="wishfromempic">
-              <img src={volcare} />
-            </div>
-            <div class="wishing1">
-              <p class="wishname">Ms Tiffany</p>
-              <p class="wishing">I'm really glad that you guys are really kind and help me alot. As a senior adult like me need more campaign like this</p>
+            <div class="phome-main-row1">
+              <div class="phome-main-left">
+                <div class="phome-main-img-div">
+                  <img src={mrBelly} class="phome-main-img" alt="" />
+                </div>
+                <div class="phome-main-info-div">
+                  <h3>Mr Belly</h3>
+                  <p>I'm really happy with this service. This is really helpful and need for the senior like us</p>
+                </div>
+              </div>
+              <div class="phome-main-right">
+                <div class="phome-main-img-div">
+                  <img src={volcare} class="phome-main-img" alt="" />
+                </div>
+                <div class="phome-main-info-div">
+                  <h3>Ms Tiffany</h3>
+                  <p>I'm really glad that you guys are really kind and help me alot. As a senior adult like me need
+                    more campaign like this</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

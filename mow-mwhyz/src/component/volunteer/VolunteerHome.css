@@ -49,37 +49,39 @@
   padding: 6em 22em;
 }
 
-.wishfromem {
-  position: relative;
-  margin: 0 auto;
+.volunteer-home-main {
+  /* margin-top: 15em; */
 }
-
-.wishfromempic {
-  display: inline-block;
-  vertical-align: top;
-  padding: 1em 4em;
-}
-.wishfromempic img {
-  width: 230px;
-  height: 230px;
-}
-.wishing1 {
-  display: inline-block;
-  vertical-align: top;
-  width: 230px;
-  height: 230px;
-}
-.wishing {
-  font-size: 0.8em;
-}
-.wishfromemtitle {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin: 2em;
+.partner-home-main-title {
   text-align: center;
   color: coral;
+  padding: 2em;
 }
-.vtmainpagespan {
-  text-transform: uppercase;
-  font-weight: bold;
+.phome-main-row {
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+.phome-main-row1 {
+  display: flex;
+  width: 90%;
+  margin: 3em auto;
+}
+
+.phome-main-left,
+.phome-main-right {
+  display: flex;
+  width: 50%;
+}
+.phome-main-img-div {
+  width: 40%;
+}
+.phome-main-info-div {
+  width: 60%;
+  padding: 2em 3em;
+  line-height: 2em;
+}
+.phome-main-img {
+  width: 100%;
+  height: 30vh;
 }
