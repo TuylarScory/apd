@@ -88,8 +88,8 @@ class MOrderDetail extends Component {
                                 <div class="detail-second">
                                     <h3><span class="order-detail-span">Name:</span> {this.state.dish.dishName}</h3>
                                     <div class="detail-longtext">
-                                        <h3><span class="order-detail-span ">Description:</span> </h3>
-                                        <h3>{this.state.dish.dishDescription}</h3>
+                                        <h3><span class="order-detail-span ">Suggestion:</span> </h3>
+                                        <h3>{this.state.dish.suggestion}</h3>
                                     </div></div>
                                 <div class="detail-third">
 
@@ -99,13 +99,13 @@ class MOrderDetail extends Component {
                                                 return (
                                                     <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-o">ORDERED</span></h3>
                                                 )
-                                            } else if (this.state.singleMOD.modStatuss === 'DELIVERING') {
-                                                return (
-                                                    <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-d">DELIVERING</span></h3>
-                                                )
-                                            } else {
+                                            } else if (this.state.singleMOD.modStatus === 'COMPLETED') {
                                                 return (
                                                     <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-c">COMPLETED</span></h3>
+                                                )
+                                            } else if (this.state.singleMOD.modStatus === 'DELIVERING'){
+                                                return (
+                                                    <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-d">DELIVERING</span></h3>
                                                 )
                                             }
                                         })()
@@ -237,8 +237,8 @@ class POrderDetail extends Component {
                                 <div class="detail-second">
                                     <h3><span class="order-detail-span">Name:</span> {this.state.dish.dishName}</h3>
                                     <div class="detail-longtext">
-                                        <h3><span class="order-detail-span ">Description:</span> </h3>
-                                        <h3>{this.state.dish.dishDescription}</h3>
+                                        <h3><span class="order-detail-span ">Suggestion:</span> </h3>
+                                        <h3>{this.state.dish.suggestion}</h3>
                                     </div></div>
                                 <div class="detail-third">
 
@@ -248,13 +248,13 @@ class POrderDetail extends Component {
                                                 return (
                                                     <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-o">ORDERED</span></h3>
                                                 )
-                                            } else if (this.state.singleMOD.modStatuss === 'DELIVERING') {
-                                                return (
-                                                    <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-d">DELIVERING</span></h3>
-                                                )
-                                            } else {
+                                            } else if (this.state.singleMOD.modStatus === 'COMPLETED') {
                                                 return (
                                                     <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-c">COMPLETED</span></h3>
+                                                )
+                                            } else if (this.state.singleMOD.modStatus === 'DELIVERING'){
+                                                return (
+                                                    <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-d">DELIVERING</span></h3>
                                                 )
                                             }
                                         })()
@@ -394,8 +394,8 @@ class VOrderDetail extends Component {
                                 <div class="detail-second">
                                     <h3><span class="order-detail-span">Name:</span> {this.state.dish.dishName}</h3>
                                     <div class="detail-longtext">
-                                        <h3><span class="order-detail-span ">Description:</span> </h3>
-                                        <h3>{this.state.dish.dishDescription}</h3>
+                                        <h3><span class="order-detail-span ">Suggestion:</span> </h3>
+                                        <h3>{this.state.dish.suggestion}</h3>
                                     </div></div>
                                 <div class="detail-third">
 
@@ -405,13 +405,13 @@ class VOrderDetail extends Component {
                                                 return (
                                                     <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-o">ORDERED</span></h3>
                                                 )
-                                            } else if (this.state.singleMOD.modStatuss === 'DELIVERING') {
-                                                return (
-                                                    <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-d">DELIVERING</span></h3>
-                                                )
-                                            } else {
+                                            } else if (this.state.singleMOD.modStatus === 'COMPLETED') {
                                                 return (
                                                     <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-c">COMPLETED</span></h3>
+                                                )
+                                            } else if (this.state.singleMOD.modStatus === 'DELIVERING'){
+                                                return (
+                                                    <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-d">DELIVERING</span></h3>
                                                 )
                                             }
                                         })()
@@ -550,8 +550,8 @@ class AOrderDetail extends Component {
                                 <div class="detail-second">
                                     <h3><span class="order-detail-span">Name:</span> {this.state.dish.dishName}</h3>
                                     <div class="detail-longtext">
-                                        <h3><span class="order-detail-span ">Description:</span> </h3>
-                                        <h3>{this.state.dish.dishDescription}</h3>
+                                        <h3><span class="order-detail-span ">Suggestion:</span> </h3>
+                                        <h3>{this.state.dish.suggestion}</h3>
                                     </div></div>
                                 <div class="detail-third">
 
@@ -561,13 +561,13 @@ class AOrderDetail extends Component {
                                                 return (
                                                     <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-o">ORDERED</span></h3>
                                                 )
-                                            } else if (this.state.singleMOD.modStatuss === 'DELIVERING') {
-                                                return (
-                                                    <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-d">DELIVERING</span></h3>
-                                                )
-                                            } else {
+                                            } else if (this.state.singleMOD.modStatus === 'COMPLETED') {
                                                 return (
                                                     <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-c">COMPLETED</span></h3>
+                                                )
+                                            } else if (this.state.singleMOD.modStatus === 'DELIVERING'){
+                                                return (
+                                                    <h3><span class="order-detail-span">Order Status:</span> <span class="order-detail-d">DELIVERING</span></h3>
                                                 )
                                             }
                                         })()
