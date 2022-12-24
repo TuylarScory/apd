@@ -1,0 +1,85 @@
+.vtmainpage {
+  margin-bottom: 4em;
+}
+.vtmainpagehero {
+  position: relative;
+  margin: 0 auto;
+}
+.vtmainpageherotext {
+  display: inline-block;
+  vertical-align: top;
+  padding: 2em 0 0 2em;
+  font-size: 2em;
+}
+.vtmainpageherotext2 {
+  padding-left: 5em;
+}
+.vtmainpageheropic {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  padding: 2em 2em 0 0;
+}
+.vtmainpageheropic img {
+  width: 700px;
+  height: 230px;
+  border-radius: 40%;
+}
+
+.vtmainpagemidpic {
+  display: inline-block;
+  vertical-align: top;
+}
+.vtmainpagemidpic img {
+  margin: -20em 0 0 3em;
+  width: 400px;
+  float: left;
+}
+.vtmainpagemidtext {
+  display: inline-block;
+  vertical-align: top;
+}
+.vtmainpagemidtext-p {
+  font-size: 1em;
+  font-weight: bold;
+  color: aliceblue;
+  margin: 6em 0 0 20em;
+  background-color: #f4a85e;
+  text-align: center;
+  padding: 6em 22em;
+}
+
+.wishfromem {
+  position: relative;
+  margin: 0 auto;
+}
+
+.wishfromempic {
+  display: inline-block;
+  vertical-align: top;
+  padding: 1em 4em;
+}
+.wishfromempic img {
+  width: 230px;
+  height: 230px;
+}
+.wishing1 {
+  display: inline-block;
+  vertical-align: top;
+  width: 230px;
+  height: 230px;
+}
+.wishing {
+  font-size: 0.8em;
+}
+.wishfromemtitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 2em;
+  text-align: center;
+  color: coral;
+}
+.vtmainpagespan {
+  text-transform: uppercase;
+  font-weight: bold;
+}

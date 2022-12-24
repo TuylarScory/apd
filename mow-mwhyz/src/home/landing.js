@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './landing.css';
-import img from '../img/photo.jpg';
 import mission from '../img/mission.jpg'
 import vision from '../img/Vision.png'
 import donate from '../img/donate.jpg'
