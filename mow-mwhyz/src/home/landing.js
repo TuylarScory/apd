@@ -21,7 +21,7 @@ export class landing extends Component {
                     <div class="text2">
                         <div class="bg-image"></div>
                         <div class="text22">
-                            <h1><span style={{'color': 'orange'}}>Together</span> We Will</h1>
+                            <h1><span style={{ 'color': 'orange' }}>Together</span> We Will</h1>
                             <h2>Rebuild Our Future</h2>
                             <button><b><a href="/donate">Donate Now</a></b></button>
                         </div>
@@ -29,7 +29,7 @@ export class landing extends Component {
 
                     <div class="body2">
                         <div class="img1">
-                            <img src={mission} style={{'width':'100%'}} />
+                            <img src={mission} style={{ 'width': '100%' }} />
                         </div>
 
                         <div class="text3">
@@ -49,18 +49,18 @@ export class landing extends Component {
                         </div>
 
                         <div class="img2">
-                            <img src={vision} style={{'width': '300px', 'height': '310px', 'margin-left': '-300px'}} />
+                            <img src={vision} style={{ 'width': '300px', 'height': '310px', 'margin-left': '-300px' }} />
 
                         </div>
 
-                        <div class="img3" style={{'margin-right': '180px'}}>
-                            <img src={donate} style={{'width': '200px', 'height': '100px'}} />
+                        <div class="img3" style={{ 'margin-right': '180px' }}>
+                            <img src={donate} style={{ 'width': '200px', 'height': '100px' }} />
                             <img src={contact}
-                                style={{'width': '200px', 'height': '200px', 'border-radius': '10px', 'box-shadow': '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}} />
+                                style={{ 'width': '200px', 'height': '200px', 'border-radius': '10px', 'box-shadow': '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' }} />
                         </div>
 
                     </div>
-                    <div class="body3">
+                    <div class="body4">
                         <div class="card">
                             <h1>VOLUNTEER</h1>
                             <p>We consider our volunteers<br />to be our greatesr asset <br />
@@ -87,6 +87,11 @@ export class landing extends Component {
                             </div>
                         </div>
 
+                    </div>
+
+                    <div class="body5">
+                        <h2 class="body5-h2">Your feedback is more important than you think!</h2>
+                        <a class="body5-a" href='https://forms.gle/q7LnCdjH4eUwTbpM6'>Take our survey</a>
                     </div>
                 </div>
             </>
