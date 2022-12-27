@@ -244,7 +244,7 @@ export function getPendingDishes(dishId) {
     console.log("Key is here : " + dishId)
     return request({
 
-        url: API_BASE_URL + '/merry/partner/dish/pending/' + dishId,
+        url: API_BASE_URL + '/merry/partner/dish/' + dishId + '/pending/',
         method: 'GET',
         data: JSON.stringify(dishId)
     });
